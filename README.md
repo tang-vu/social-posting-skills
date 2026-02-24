@@ -18,28 +18,49 @@ Drop these skills into your project and your AI agent can:
 
 ## 🚀 Quick Start
 
-### Option 1: Clone into your project
+### Install (1 command)
 
 ```bash
-# Clone into your project's .agents directory
-git clone https://github.com/tang-vu/social-posting-skills.git .agents/
+# Install into current project (default)
+npx -y social-posting-skills
 ```
 
-### Option 2: Copy specific skills
+This creates `.agents/skills/` and `.agents/workflows/` in your project directory. Done!
+
+### Other Install Targets
 
 ```bash
-# Copy only the skills you need
-cp -r social-posting-skills/.agents/skills/post-reddit/ .agents/skills/
-cp -r social-posting-skills/.agents/skills/post-x/ .agents/skills/
+# Install for Antigravity IDE (global)
+npx -y social-posting-skills --antigravity
+
+# Install for Cursor IDE
+npx -y social-posting-skills --cursor
+
+# Install for Claude Code CLI
+npx -y social-posting-skills --claude
+
+# Install for Gemini CLI
+npx -y social-posting-skills --gemini
+
+# Install to custom path
+npx -y social-posting-skills --path ./my-custom-dir
 ```
 
-### Option 3: Use as a standalone project
+### Alternative: Git Clone
 
 ```bash
 git clone https://github.com/tang-vu/social-posting-skills.git
 cd social-posting-skills
 # Tell your AI agent: "Post about [topic] to all platforms"
 ```
+
+### Usage
+
+Tell your AI agent:
+> "Post about [your topic] to all social media platforms"
+
+Or use the workflow command:
+> `/post-social`
 
 ## 📋 Supported Platforms
 

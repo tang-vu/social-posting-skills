@@ -1,0 +1,30 @@
+{
+  "name": "social-posting-skills",
+  "version": "1.0.0",
+  "description": "Curated AI agent skills for posting content across 12 social media platforms. Built for Antigravity, Claude Code, Gemini CLI.",
+  "license": "MIT",
+  "bin": {
+    "social-posting-skills": "bin/install.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tang-vu/social-posting-skills.git"
+  },
+  "keywords": [
+    "social-media",
+    "ai-agent",
+    "claude-code",
+    "antigravity",
+    "gemini-cli",
+    "cursor",
+    "skills",
+    "automation",
+    "posting",
+    "content"
+  ],
+  "author": "Tang Vu",
+  "homepage": "https://github.com/tang-vu/social-posting-skills"
+}
