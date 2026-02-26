@@ -23,6 +23,16 @@ Facebook has 3B+ monthly active users. Best for community building, local audien
 - **Hashtags**: Minimal impact on reach (use 1-2 max or skip)
 - **Reels**: Short-form video gets preferential treatment in discovery
 
+## Link Placement Strategy
+
+> **DEFAULT: Put links in the FIRST COMMENT, not in the post body.**
+
+- Facebook's algorithm deprioritizes posts with external links in the body
+- Native content (text, images, videos) without links gets significantly more reach
+- Best strategy: Post engaging text-only content, then add the link as the first comment
+- If you must include a link in the body, add substantial commentary around it
+- Links to YouTube are especially penalized -- upload videos natively instead
+
 ## Posting Steps (Browser Automation)
 
 1. Navigate to `https://www.facebook.com/`

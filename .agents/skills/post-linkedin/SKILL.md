@@ -25,6 +25,16 @@ LinkedIn is the professional networking platform with 1B+ members. It's the best
 - Add personal stories, specific details, and genuine voice to stand out
 - Human oversight is essential even when using AI to draft
 
+## Link Placement Strategy
+
+> **MANDATORY: Put links in the FIRST COMMENT, NEVER in the post body.**
+
+- Links in the body reduce reach by 25-35% (confirmed by LinkedIn's own algorithm)
+- Linkless posts get 6x more reach and 18x more comments
+- The ONLY correct strategy: Write a text-only post, publish it, then immediately add a comment with the link
+- Even "link in bio" is better than link in body
+- This is the single most important rule for LinkedIn reach
+
 ## Posting Method: MANUAL PASTE
 
 > LinkedIn blocks browser automation via system policy. The agent generates content and saves it to `posts/drafts/linkedin_post.md`. You paste it manually.

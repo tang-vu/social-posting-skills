@@ -27,8 +27,10 @@ For each target platform, read the corresponding skill file first:
 ### Reddit (Auto)
 1. Read `.agents/skills/post-reddit/SKILL.md`
 2. Navigate to `https://www.reddit.com/r/{subreddit}/submit`
-3. Fill in title and body (ASCII English only)
-4. Click Post and verify
+3. Fill in title and body (ASCII English only, **NO links in body**)
+4. End body with "Link in the comments."
+5. Click Post and verify
+6. **Immediately add a comment** with the URL
 
 ### LinkedIn (MANUAL -- system policy blocks automation)
 1. Read `.agents/skills/post-linkedin/SKILL.md`
@@ -38,17 +40,20 @@ For each target platform, read the corresponding skill file first:
 ### Facebook (Auto)
 1. Read `.agents/skills/post-facebook/SKILL.md`
 2. Navigate to `https://www.facebook.com/`
-3. Open composer, type content (ASCII English only), click Post
+3. Open composer, type content (ASCII English only, **NO links in body**), click Post
+4. **Add first comment** with the URL
 
 ### Threads (Auto)
 1. Read `.agents/skills/post-threads/SKILL.md`
 2. Navigate to `https://www.threads.net/`
-3. Open composer, type content (ASCII English only, max 500 chars), click Post
+3. Open composer, type content (ASCII English only, max 500 chars, **NO links in body**), click Post
+4. **Reply to your own post** with the URL
 
 ### X / Twitter (Auto)
 1. Read `.agents/skills/post-x/SKILL.md`
 2. Navigate to `https://x.com/home`
-3. Open composer, type content in small chunks (ASCII English only), click Post
+3. Open composer, type content in small chunks (ASCII English only, **NO links in main tweet**), click Post
+4. **Reply to your own tweet** with the URL
 
 ### Product Hunt (MANUAL -- Cloudflare bot detection)
 1. Read `.agents/skills/post-producthunt/SKILL.md`
@@ -73,7 +78,8 @@ For each target platform, read the corresponding skill file first:
 ### Bluesky (Auto)
 1. Read `.agents/skills/post-bluesky/SKILL.md`
 2. Navigate to `https://bsky.app/`
-3. Click compose, type content (max 300 chars, no hashtags), click Post
+3. Click compose, type content (max 300 chars, no hashtags, **NO links in body**), click Post
+4. **Reply to your own post** with the URL
 
 ### Substack (Auto)
 1. Read `.agents/skills/post-substack/SKILL.md`

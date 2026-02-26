@@ -36,21 +36,33 @@ Before attempting to post, the agent MUST verify:
 4. **Check minimum karma/age**: Some subs display these requirements in their rules
 5. **Consider text-only strategy**: If account has low karma, post WITHOUT links in the body — put the link in the first comment instead
 
+## Link Placement Strategy
+
+> **DEFAULT: Put links in the FIRST COMMENT, not in the post body.**
+
+- Reddit's spam filters aggressively target posts with external links (GitHub, personal sites, blogs)
+- This applies to ALL accounts, not just low-karma ones -- even high-karma accounts get flagged for promotional links
+- Always use a text-only self-post with "Link in the comments" at the end
+- Post the URL as a reply to your own post immediately after publishing
+- This is the safest strategy regardless of karma level
+
 ## Posting Steps (Browser Automation)
 
 1. Navigate to `https://www.reddit.com/r/{subreddit}/submit`
 2. Wait for the submit form to load (must be logged in)
-3. Select post type: "Text" for self-posts, "Link" for URL posts
+3. Select post type: **"Text"** (always prefer text posts over link posts)
 4. Type the title (ASCII English only, max 300 chars)
-5. Type the body content (ASCII English only)
-6. Select flair if required by the subreddit
-7. Click "Post" button
-8. **Check for removal**: After posting, verify the post is visible (not removed by filters)
-9. If removed: save content as draft, inform user to build karma first
+5. Type the body content (ASCII English only, **NO external links in body**)
+6. End body with: "Link in the comments."
+7. Select flair if required by the subreddit
+8. Click "Post" button
+9. **Immediately add a comment** with the URL
+10. **Check for removal**: After posting, verify the post is visible (not removed by filters)
+11. If removed: save content as draft, inform user to build karma first
 
 ## Content Format
 
-### Self-Post
+### Self-Post (Recommended)
 ```
 Title: {Descriptive, specific title without clickbait}
 
@@ -60,25 +72,20 @@ Body:
 {Main content: detailed explanation, story, or question}
 
 {Closing: question to prompt discussion or explicit request for feedback}
+
+Link in the comments.
+
+First Comment:
+{URL to project/resource}
 ```
 
-### Link Post
+### Link Post (High-karma accounts only)
 ```
 Title: {What makes this link worth clicking}
 URL: {Link to project, article, or resource}
 ```
 
-### Low-Karma Strategy (Link in Comment)
-```
-Title: {Descriptive title without link}
-
-Body:
-{Full text content without any external links}
-{End with: "Link in the comments."}
-
-First Comment:
-{URL to project/resource}
-```
+> Only use link posts if your account has 1,000+ karma and a history of participation in the target subreddit.
 
 ## Subreddit Selection Guide
 

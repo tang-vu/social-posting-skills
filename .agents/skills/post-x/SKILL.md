@@ -15,6 +15,16 @@ X (formerly Twitter) is the real-time social platform for tech, media, and break
 - **Polls**: Up to 4 options, 24h-7d duration
 - **Verification**: X Premium ($8/month), account must be 90 days old
 
+## Link Placement Strategy
+
+> **DEFAULT: Put links in a REPLY to your own tweet, not in the main tweet.**
+
+- Tweets with external links get significantly less reach in the algorithm (estimated 30-50% reduction)
+- t.co link shortening eats into your 280 character limit
+- Best strategy: Post a compelling text-only tweet, then immediately reply with the link
+- Exception: If the link generates a rich card preview that adds value, it can go in the main tweet
+- For threads: Put the link in the last tweet of the thread
+
 ## Rate Limits
 
 > X enforces strict rate limits. Exceeding them triggers a "Rate Limit Exceeded" error (resolves in 15min to 24h).

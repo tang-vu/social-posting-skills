@@ -6,5 +6,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Posts (user-generated drafts, not part of the package)
+posts/
+
 # Node
 node_modules/

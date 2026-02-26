@@ -27,6 +27,16 @@ Threads (by Meta) is Instagram's text-based companion app. It focuses on short-f
 - **Ads**: Ads now appear in the "For You" feed
 - **Video Player**: Improved with pause, play, skip, and progress bar
 
+## Link Placement Strategy
+
+> **DEFAULT: Put links in a REPLY to your own post, not in the main post body.**
+
+- Threads algorithm deprioritizes posts with external links in the body
+- Link-heavy posts get reduced distribution in the "For You" feed
+- Best strategy: Post text-only content, then reply to your own post with the link
+- Links in the main post will show as preview cards but hurt organic reach
+- Keep the main post conversational and authentic -- save links for replies
+
 ## Posting Steps (Browser Automation)
 
 1. Navigate to `https://www.threads.net/`

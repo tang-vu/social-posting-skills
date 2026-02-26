@@ -15,6 +15,16 @@ Bluesky (bsky.app) is a decentralized social platform built on the AT Protocol. 
 - **Custom Feeds**: Users can create and subscribe to algorithmic feeds
 - **Decentralized**: Your account is portable across servers via AT Protocol
 
+## Link Placement Strategy
+
+> **RECOMMENDED: Put links in a REPLY to your own post.**
+
+- Bluesky's 300-char limit makes every character precious -- links eat into this
+- Links generate rich card previews which can dominate the post visually
+- Best strategy: Post a conversational text-only post, then reply with the link
+- Exception: If the link IS the content (sharing an article), a link post is fine
+- The community values authentic conversation over link-sharing
+
 ## Posting Steps (Browser Automation)
 
 1. Navigate to `https://bsky.app/`
