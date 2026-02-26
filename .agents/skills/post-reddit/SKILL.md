@@ -6,13 +6,35 @@ description: Post to Reddit communities for authentic engagement and feedback
 ## Platform Overview
 Reddit is a network of communities (subreddits) organized by topic. Posts succeed when they provide genuine value to the community. Self-promotion must be balanced with authentic participation. Reddit has 1.7B+ monthly active users and is the #1 platform for community-driven content.
 
+## Account Requirements
+
+> **CRITICAL**: Reddit's platform-level spam filters auto-remove posts from new or low-karma accounts. This is NOT a subreddit mod rule — it is Reddit's own filter and cannot be bypassed by changing content.
+
+- **Minimum Karma**: ~100 karma recommended to post freely. Some subreddits require 1,000+.
+- **Account Age**: Many subreddits require accounts to be 7-30 days old before posting.
+- **Subreddit Karma**: Some subs track karma earned *within that specific subreddit*.
+- **Comment vs Post Karma**: Comment karma is easier to build. Start by commenting helpfully.
+- **External Links**: Posts containing external links (GitHub, personal sites) from low-karma accounts are auto-removed by Reddit's filters — even if the content is legitimate.
+- **Building Karma**: Comment helpfully on r/AskReddit, r/CasualConversation, r/NoStupidQuestions for 2-7 days before attempting to post links.
+
 ## Platform Constraints
 - **Title**: Max 300 characters (keep under 100 for best engagement)
 - **Body**: Max 40,000 characters for self-posts
 - **Media**: Images, videos, polls, links
-- **Flair**: One flair per post (required in many subreddits)
+- **Flair**: One flair per post (required in many subreddits — post FAILS without it)
 - **Links**: URL posts or self-posts with inline links
-- **Karma**: Some subreddits require minimum karma to post
+- **Rate Limiting**: Reddit rate-limits posting frequency per account
+- **Cross-posting**: Reddit's built-in crosspost feature is distinct from reposting
+
+## Pre-Post Checklist
+
+Before attempting to post, the agent MUST verify:
+
+1. **Check account karma**: If karma < 100, WARN the user that the post will likely be auto-removed
+2. **Read subreddit rules**: Navigate to `https://www.reddit.com/r/{subreddit}/about/rules` and check requirements
+3. **Check if flair is required**: Many subreddits reject posts without flair
+4. **Check minimum karma/age**: Some subs display these requirements in their rules
+5. **Consider text-only strategy**: If account has low karma, post WITHOUT links in the body — put the link in the first comment instead
 
 ## Posting Steps (Browser Automation)
 
@@ -23,7 +45,8 @@ Reddit is a network of communities (subreddits) organized by topic. Posts succee
 5. Type the body content (ASCII English only)
 6. Select flair if required by the subreddit
 7. Click "Post" button
-8. Verify the post appears on the subreddit
+8. **Check for removal**: After posting, verify the post is visible (not removed by filters)
+9. If removed: save content as draft, inform user to build karma first
 
 ## Content Format
 
@@ -45,18 +68,33 @@ Title: {What makes this link worth clicking}
 URL: {Link to project, article, or resource}
 ```
 
+### Low-Karma Strategy (Link in Comment)
+```
+Title: {Descriptive title without link}
+
+Body:
+{Full text content without any external links}
+{End with: "Link in the comments."}
+
+First Comment:
+{URL to project/resource}
+```
+
 ## Subreddit Selection Guide
 
-| Subreddit | Best For | Posting Rules |
-|-----------|----------|---------------|
-| r/SideProject | Showcasing projects | Show HN-style, share what you built |
-| r/webdev | Web development | Technical content, no pure promotion |
+| Subreddit | Best For | Key Rules |
+|-----------|----------|-----------|
+| r/SideProject | Showcasing projects | No clear rules — but filters are active |
+| r/sideprojects | Side projects (note the 's') | Flairs required, no astroturfing, significant changes for reposts |
+| r/webdev | Web development | Technical content only, no pure promotion |
 | r/programming | General programming | Links to articles, discussions |
-| r/startups | Startup advice | Questions, learnings, no ads |
+| r/opensource | Open source projects | Rule #2: No spam or excessive self-promotion |
+| r/startups | Startup advice | Questions and learnings, no ads |
 | r/learnprogramming | Tutorials | Helpful content for beginners |
 | r/artificial | AI/ML discussion | Technical AI content |
-| r/indiehackers | Indie products | Build-in-public updates |
 | r/entrepreneur | Business | Advice, lessons, strategies |
+
+> **WARNING**: r/SideProject and r/sideprojects are DIFFERENT subreddits with different rules and mod teams.
 
 ## Content Strategy
 - **Be genuine**: Reddit users detect and punish marketing-speak instantly
@@ -65,13 +103,15 @@ URL: {Link to project, article, or resource}
 - **Include numbers**: Revenue, user counts, or metrics add credibility
 - **Ask for feedback**: Redditors love giving opinions
 - **Follow the 90/10 rule**: 90% community participation, 10% self-promotion
+- **No drive-by posting**: You must participate in the community first
 
 ## Algorithm / Discovery Tips
 - Posts that get upvotes in the first hour rise fastest
 - Comments drive engagement signals (reply to every comment)
-- Cross-posting to multiple relevant subs is acceptable
+- Cross-posting to multiple relevant subs is acceptable (use Reddit's crosspost)
 - Timing: post during peak US hours (8-10 AM EST)
 - Controversial titles get more engagement (but risk downvotes)
+- 2025: Reddit now has AI rule-checking for draft posts and pre-submission notifications
 
 ## Best Practices
 - Read subreddit rules before posting (sidebar)
@@ -79,6 +119,7 @@ URL: {Link to project, article, or resource}
 - Engage with comments on your own post
 - Use descriptive titles, not clickbait
 - Include a TL;DR for long posts
+- Build comment karma before posting links
 
 ## What to Avoid
 - Generic self-promotion ("Check out my app!")
@@ -86,11 +127,17 @@ URL: {Link to project, article, or resource}
 - Ignoring subreddit rules or culture
 - Using marketing buzzwords
 - Asking for upvotes (against Reddit ToS)
+- Posting links from a new/low-karma account
 
 ## Known Pitfalls
-- Some subreddits have auto-moderators that remove posts from new accounts
+- **Reddit's platform-level filter** removes posts with external links from new/low-karma accounts. This is the #1 cause of failed posts.
+- Even "clean" posts with one GitHub link get removed from low-karma accounts
+- Workaround: post text-only, put link in first comment
+- Modmail to subreddit mods may help get posts manually approved
 - Reddit rate-limits posting (wait between submissions)
+- Some subreddits auto-remove posts from accounts under certain age
 - Playwright cannot type emoji or Unicode characters
+- Build karma by commenting helpfully for 2-7 days before posting
 
 ## Related Skills
 - `content-writing` — Content adaptation and templates

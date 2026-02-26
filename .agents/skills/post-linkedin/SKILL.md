@@ -10,8 +10,20 @@ LinkedIn is the professional networking platform with 1B+ members. It's the best
 - **Character Limit**: 3,000 characters per post
 - **Media**: Images, videos, documents (carousel PDFs), polls
 - **Hashtags**: 3-5 per post (at the bottom)
-- **Links**: Put in comments (links in body kill reach by 40-50%)
+- **Links**: Put in comments — links in body reduce reach by 25-35%
+- **Linkless posts**: Get 6x more reach and 18x more comments than posts with links
 - **Videos**: Native video gets 5x more reach than YouTube links
+- **Carousels**: Document posts get 2-3x reach
+- **80/20 Rule**: 80% native content, 20% with links (in comments)
+
+## AI Content Warning (2025)
+
+> LinkedIn's algorithm now scrutinizes AI-generated content. Overly generic or automated posts get reduced reach. Authentic, human-driven content is strongly prioritized.
+
+- Posts analyzed for AI-generated material
+- Generic, template-like content is penalized
+- Add personal stories, specific details, and genuine voice to stand out
+- Human oversight is essential even when using AI to draft
 
 ## Posting Method: MANUAL PASTE
 
@@ -105,9 +117,22 @@ Slide 10: CTA (Follow for more, link in comments)
 - LinkedIn shows your post to 10% of connections first
 - If that 10% engages, it expands to more connections
 - Comments carry 4x the weight of likes
-- First 60 minutes are critical for reach
+- First 60 minutes are critical for reach (the "golden hour")
 - Posts without links get 3x the reach
 - Document posts (carousels) get 2-3x the reach
+- **Dwell time** (how long users read your post) is a key ranking factor
+- LinkedIn now shows older relevant posts (2-3 weeks old) over newer irrelevant ones
+- Vertical videos getting increased priority in 2025
+- Expertise: consistent posting on niche topics builds algorithmic authority
+
+## Automation Restrictions
+
+> LinkedIn's Terms of Service explicitly prohibit bots and automated methods for accessing the platform.
+
+- Automation can lead to temporary restrictions or permanent bans
+- Daily limits (2025): 10-20 connection requests, 50-100 messages
+- Spread out actions to mimic natural behavior
+- Scheduling content via official tools (LinkedIn's own scheduler) is acceptable
 
 ## Hashtag Strategy
 | Industry | Recommended Hashtags |
@@ -130,6 +155,8 @@ Slide 10: CTA (Follow for more, link in comments)
 - Corporate jargon without personality
 - Tagging 20+ people for reach (spam behavior)
 - Only posting about your product/company
+- AI-generated generic content (flagged and reduced reach)
+- Excessive automation (leads to account restriction or ban)
 
 ## Related Skills
 - `content-writing` — Hook formulas and post templates

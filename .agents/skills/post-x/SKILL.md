@@ -9,10 +9,43 @@ X (formerly Twitter) is the real-time social platform for tech, media, and break
 ## Platform Constraints
 - **Character Limit**: 280 characters per tweet (free), 25,000 (Premium)
 - **Media**: Up to 4 images, 1 video, or 1 GIF per tweet
-- **Hashtags**: 1-2 max (more reduces engagement)
+- **Hashtags**: 1-2 max (more reduces engagement); banned in promoted posts (Jun 2025)
 - **Links**: Shortened via t.co, show as preview cards
 - **Threads**: Chain of tweets for longer content
 - **Polls**: Up to 4 options, 24h-7d duration
+- **Verification**: X Premium ($8/month), account must be 90 days old
+
+## Rate Limits
+
+> X enforces strict rate limits. Exceeding them triggers a "Rate Limit Exceeded" error (resolves in 15min to 24h).
+
+| Action | Limit |
+|--------|-------|
+| Posts per day | 2,400 (tweets + retweets + replies) |
+| Posts per 30 minutes | 50 |
+| DMs per day | 500 |
+| New follows per day | 400 |
+| Post views (verified) | 10,000/day |
+| Post views (unverified) | 1,000/day |
+| Post views (new unverified) | 500/day |
+
+## Automation Rules
+
+**Allowed:**
+- Scheduling tweets and threads for future publication
+- Auto-posting content from RSS feeds or trusted sources
+- Analytics and monitoring tools
+- Non-spammy welcome DMs to new followers
+
+**Banned (will result in account penalties):**
+- Mass following or unfollowing accounts
+- Bulk liking or retweeting to inflate engagement
+- Sending unsolicited or spammy DMs
+- Posting identical content across multiple accounts
+- Automated replies to keywords
+- Using fake engagement bots (buying likes/retweets/followers)
+
+**Best Practice**: 80/20 rule — automate 80% of routine tasks, keep 20% for genuine human engagement.
 
 ## Posting Steps (Browser Automation)
 
@@ -75,6 +108,11 @@ Tweet 9: {CTA}
 - Video tweets get 10x more engagement than text-only
 - Tweeting 3-5 times daily is optimal
 
+## Impersonation Rules (Apr 2025)
+- Parody/fan accounts must start username with 'fake' or 'parody'
+- Must use a different profile picture than the imitated account
+- Violations can lead to account suspension
+
 ## Best Practices
 - Tweet 3-5 times per day (mix of original + replies)
 - Thread every 2-3 days for in-depth content
@@ -83,18 +121,20 @@ Tweet 9: {CTA}
 - Pin your best tweet or a thread to your profile
 
 ## What to Avoid
-- Using more than 2 hashtags
+- Using more than 2 hashtags in organic posts
 - Posting identical threads repeatedly
 - Ignoring replies and mentions
 - Pure self-promotion without value
 - Scheduling everything (mix scheduled + real-time)
+- Mass automated actions (follow/unfollow/like)
 
 ## Known Pitfalls
 - Playwright needs to type in small chunks (50-100 chars at a time)
-- X may rate-limit rapid actions
+- X rate-limits rapid actions (50 posts/30min, 2400/day)
 - Thread posting requires clicking "+" for each additional tweet
 - ASCII English only — no emoji or special characters via automation
 - t.co link shortening counts against character limit
+- Unverified accounts have significantly lower post view limits
 
 ## Related Skills
 - `content-writing` — Thread templates and hook formulas
