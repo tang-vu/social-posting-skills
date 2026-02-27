@@ -42,6 +42,7 @@ Facebook has 3B+ monthly active users. Best for community building, local audien
 5. Type the post content (ASCII English only)
 6. Click "Post" button
 7. Verify post appears on the timeline
+8. **Immediately comment on your own post** with the link (if applicable)
 
 ### Posting to a Group
 1. Navigate to `https://www.facebook.com/groups/{group_id}/`
@@ -49,6 +50,7 @@ Facebook has 3B+ monthly active users. Best for community building, local audien
 3. Type content
 4. Click "Post"
 5. **Note**: Post may show as "Pending admin approval" — this is normal for many groups
+6. After approved, add a comment with your link
 
 ## Group Posting Details
 
@@ -102,6 +104,85 @@ Facebook has 3B+ monthly active users. Best for community building, local audien
 - Use Facebook Groups for community building
 - Native video and images outperform text-only posts
 - Schedule posts for 1-4 PM weekdays for best reach
+
+## Reaction Strategy
+
+> Facebook offers 7 reactions. Using varied reactions (not just Like) makes your engagement look more natural and human.
+
+| Reaction | Best Used For |
+|----------|---------------|
+| 👍 Like | General approval, quick engagement |
+| ❤️ Love | Strong appreciation, personal stories, milestones |
+| 🤗 Care | Supportive content, someone sharing struggles |
+| 😂 Haha | Funny content, memes, jokes |
+| 😮 Wow | Surprising news, impressive achievements |
+| 😢 Sad | Bad news, sympathetic content |
+| 😡 Angry | Injustice, outrage-worthy content |
+
+- **Mix your reactions**: Don't just Like everything — use Love, Haha, Wow to seem more engaged
+- **Hover to react**: Hold your cursor over the Like button for 1-2 seconds to see the reaction bar
+- **Reactions on comments**: You can also react to individual comments, not just posts
+
+## Pre-Posting Engagement (Before You Post)
+
+> Warm up the algorithm 15-30 minutes before posting.
+
+1. **Scroll through feed** for 5-10 minutes
+2. **React to 5-8 posts** (use varied reactions, not just Like)
+3. **Comment on 2-3 posts** with genuine thoughts (3+ words, not just emoji)
+4. **Share 1 post** with your own commentary
+5. **Visit 1-2 Groups** you're in and engage there
+6. Then post your content — you're now "warm" in the algorithm
+
+## Post-Posting Engagement (After You Post)
+
+> The first 60 minutes determine your post's reach (the "golden hour").
+
+1. **Stay online** for at least 60 minutes after posting
+2. **Reply to every single comment** — comments are 4x more valuable than likes
+3. **React to comments** on your post (Love, Haha, etc.)
+4. **Add context in comments**: Reply to your own post with additional info or links
+5. **Continue browsing and engaging** with other posts
+6. **Check back** 2-4 hours later for more comments
+7. If you posted in a Group, **engage with other posts in that Group** too
+
+## Account Nurturing (Daily Routine)
+
+> Facebook rewards consistent, meaningful, conversation-driven activity.
+
+### Daily Minimum (15-20 min/day)
+- Browse feed: 5-10 min
+- React to 10-15 posts (mix of reactions)
+- Comment on 3-5 posts (genuine, 3+ words)
+- Share 1 post with commentary
+- Post 1-2 original posts
+
+### Group Engagement (Critical for Reach)
+- Participate in 2-3 Groups daily
+- Comment on Group posts before posting your own
+- Answer questions in Groups — build reputation
+- Post in Groups 2-3 times per week
+
+### Weekly Goals
+- Post in 3-5 different Groups
+- Share 2-3 native videos or image posts
+- Respond to all DMs and messages
+- Review analytics for best-performing content
+
+### Growth Pattern
+```
+Week 1-2: Engage only — react, comment, join Groups
+Week 3-4: Start posting (1/day) + continue engaging
+Month 2: Add Group posting + native video
+Month 3+: Full routine with Group leadership
+```
+
+### Engagement Quality Tips
+- Comments should be 3+ words — "Nice!" doesn't count
+- Ask follow-up questions in comments
+- Tag friends ONLY if genuinely relevant
+- Share personal experiences related to the post
+- Don't use engagement bait ("Tag a friend who...")
 
 ## What to Avoid
 - Engagement bait phrasing (Facebook penalizes this)

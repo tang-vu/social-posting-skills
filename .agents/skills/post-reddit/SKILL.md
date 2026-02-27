@@ -120,6 +120,72 @@ URL: {Link to project, article, or resource}
 - Controversial titles get more engagement (but risk downvotes)
 - 2025: Reddit now has AI rule-checking for draft posts and pre-submission notifications
 
+## Pre-Posting Engagement (Before You Post)
+
+> Reddit REQUIRES you to be an active community member before posting your own content.
+
+### If Account is New (< 100 karma)
+1. **DO NOT post links yet** — they will be auto-removed
+2. Spend 3-7 days commenting helpfully on:
+   - r/AskReddit (easiest karma)
+   - r/CasualConversation
+   - r/NoStupidQuestions
+   - Subreddits in your niche
+3. Aim for 100+ comment karma before attempting to post
+4. Comment genuinely — helpful answers, not one-word replies
+
+### If Account Has Karma (100+)
+1. **Browse the target subreddit** for 10-15 minutes before posting
+2. **Comment on 3-5 posts** in that subreddit (builds subreddit-specific karma)
+3. **Upvote 5-10 posts** in the subreddit
+4. **Read the sidebar rules** and recent posts to understand the culture
+5. Then post your content
+
+## Post-Posting Engagement (After You Post)
+
+> The first 1-2 hours determine if your post rises or dies.
+
+1. **Reply to EVERY comment** on your post within the first 2 hours
+2. **Upvote every reply** to your post
+3. **Be genuinely helpful** in replies — Redditors detect and punish self-promotion
+4. **Don't be defensive** — if someone criticizes, engage constructively
+5. **Add your link in the first comment** (NOT in the post body)
+6. **Check if post was removed**: After 30 min, check if it's visible from a logged-out browser
+7. If removed: contact subreddit mods via modmail
+
+## Account Nurturing (Karma Building Routine)
+
+> Reddit accounts need REPUTATION (karma) before they can effectively post content.
+
+### Daily Minimum (15-20 min/day)
+- Browse and read: 5-10 min
+- Comment on 5-10 posts (be helpful, add value)
+- Upvote 10-15 posts
+- Reply to replies on your comments
+
+### Karma Building Strategy
+```
+Days 1-3: Comment on r/AskReddit (5-10 comments/day)
+Days 4-7: Add niche subreddits, continue commenting
+Week 2: Post text-only in niche subs (no links yet)
+Week 3: Post text with "link in comments" strategy
+Month 2+: Regular posting with established reputation
+```
+
+### Types of Comments That Build Karma
+- Detailed, helpful answers to questions
+- Personal experiences related to the topic
+- Funny but relevant observations
+- Sharing expertise or data
+- Asking thoughtful follow-up questions
+
+### What Kills Karma
+- "Check out my project!" without context
+- Generic one-word replies
+- Posting the same content to 10 subreddits
+- Being argumentative or hostile
+- Ignoring subreddit rules
+
 ## Best Practices
 - Read subreddit rules before posting (sidebar)
 - Check recent posts for what gets upvoted

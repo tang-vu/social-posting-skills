@@ -1,6 +1,6 @@
 # 📢 Social Posting Skills
 
-**Curated AI agent skills for posting content across 12 social media platforms.**
+**Curated AI agent skills for posting, engaging, and growing across 12 social media platforms.**
 
 Built for [Antigravity IDE](https://blog.google/technology/google-deepmind/antigravity/), [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Gemini CLI](https://github.com/google-gemini/gemini-cli), and any AI coding assistant that supports `.agents/skills/` or `.gemini/skills/`.
 
@@ -15,6 +15,10 @@ Drop these skills into your project and your AI agent can:
 - 🤖 **Auto-post via browser automation** (Playwright/browser_subagent)
 - 📋 **Save drafts** for manual platforms (LinkedIn, Product Hunt)
 - 📊 **Follow best practices** per platform's algorithm and community
+- 🧵 **Multi-thread posting** (X threads, Threads reply-chains, Bluesky threads)
+- 🔥 **Pre-posting engagement** warm-up routines per platform
+- 💬 **Post-posting engagement** during the golden hour window
+- 🌱 **Account nurturing** with daily/weekly growth strategies
 
 ## 🚀 Quick Start
 

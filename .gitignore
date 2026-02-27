@@ -9,5 +9,8 @@ Thumbs.db
 # Posts (user-generated drafts, not part of the package)
 posts/
 
+# DOM Selectors (local tool dev reference, not part of package)
+DOM_SELECTORS.md
+
 # Node
 node_modules/

@@ -152,6 +152,64 @@ Slide 10: CTA (Follow for more, link in comments)
 | DevRel | #DevRel #DeveloperExperience #OpenSource |
 | Career | #CareerAdvice #JobSearch #Leadership |
 
+## Pre-Posting Engagement (Before You Post)
+
+> Do this 30-60 minutes before publishing your post.
+
+1. **Scroll your feed** for 10-15 minutes
+2. **Like 5-10 posts** from connections and industry leaders
+3. **Comment on 3-5 posts** with thoughtful insights (50+ words for best impact)
+4. **Share 1 post** with your own added commentary
+5. **Reply to any pending comments** on your previous posts
+
+> LinkedIn shows your post first to 10% of connections. If they engage, it expands. Being active before posting puts you in their feed already.
+
+## Post-Posting Engagement (After You Post)
+
+> The first 60 minutes are the "golden hour" — engagement here determines your total reach.
+
+1. **Reply to every comment** within the first hour — this is the #1 factor
+2. **Like every comment** on your post
+3. **Ask follow-up questions** in your replies to keep the conversation going
+4. **Immediately add a comment** with your link (NEVER put links in the post body)
+5. **Continue engaging** with other people's posts (stay visible)
+6. **Check back** 2-4 hours later for more comments
+7. **DM people** who engaged deeply ("Thanks for the thoughtful comment!")
+
+## Account Nurturing (Daily Routine)
+
+> LinkedIn rewards consistent professional presence, not just sporadic posting.
+
+### Daily Minimum (20-30 min/day)
+- Browse feed: 10 min
+- Like 10-15 posts
+- Comment on 5-8 posts (thoughtful, 20+ words)
+- Share 1 post with added insight
+- Accept/send 5-10 connection requests
+
+### Weekly Goals
+- 3-5 original posts per week
+- 1 carousel (document post) per week 
+- Reply to ALL comments on your posts
+- Send 5-10 personalized connection requests
+- Engage with 2-3 industry leaders' posts
+
+### Growth Pattern
+```
+Week 1-2: Comment on 10+ posts daily (build visibility)
+Week 3-4: Start posting 3x/week + continue commenting
+Month 2: Add carousels and story-format posts
+Month 3+: Full thought leadership routine
+```
+
+### What Makes LinkedIn Comments Valuable
+- **50+ words** for maximum visibility (LinkedIn promotes long, insightful comments)
+- Add your own perspective or contrarian view
+- Share a relevant personal experience
+- Ask a follow-up question
+- Tag relevant people ONLY if they'd genuinely benefit
+- Avoid: "Great post!", "Agree!", emoji-only replies
+
 ## Best Practices
 - Post 3-5 times per week (consistency > volume)
 - Reply to every comment within the first hour

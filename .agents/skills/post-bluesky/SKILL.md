@@ -35,6 +35,24 @@ Bluesky (bsky.app) is a decentralized social platform built on the AT Protocol. 
 6. Click "Post" button
 7. Verify post appears on your profile timeline
 
+### Thread Posting (Reply Chain)
+
+> Bluesky does NOT have a native "Add to thread" feature in the composer. Build threads by replying to yourself.
+
+1. Post the first post normally
+2. Navigate to YOUR OWN post (or find it on your profile)
+3. Click the Reply button on your post
+4. Type the next post in the reply composer
+5. Click "Post"
+6. Repeat for each additional post in the thread
+
+**Thread Strategy Tips:**
+- Number your posts: "1/", "2/", etc.
+- First post = hook (must be compelling since there's no auto-unfold)
+- Each reply should work as standalone AND connect to the chain
+- Keep threads shorter (3-5 posts) since there's no "Post all" feature
+- Link to full content in the last reply
+
 ## Content Format
 ```
 {One clear statement, insight, or observation}
@@ -67,6 +85,59 @@ No hashtags. Just write naturally.
 - Posts liked or reposted by people you follow appear in your feed
 - Starter packs can help new users find relevant accounts
 - Consistent posting (2-5x daily) builds follower base organically
+
+## Pre-Posting Engagement (Before You Post)
+
+> Warm up by engaging 10-15 minutes before posting.
+
+1. **Scroll through your feed** for 5-10 minutes
+2. **Like 5-8 posts** from people in your niche
+3. **Reply to 2-3 posts** with genuine, conversational thoughts
+4. **Repost 1 post** from someone interesting
+5. Then post your content
+
+## Post-Posting Engagement (After You Post)
+
+> Bluesky is chronological by default, so timing and conversation matter more than algorithmic boost.
+
+1. **Reply to every comment** on your post
+2. **Like comments** on your post
+3. **Continue engaging** with others' posts (don't post-and-disappear)
+4. If you want to build a thread, **reply to your own post** with follow-up content
+5. **Add the link** in a reply to your original post (keeps main post clean)
+
+## Account Nurturing (Daily Routine)
+
+> Bluesky is still growing. Early consistent presence = outsized influence.
+
+### Daily Minimum (10-15 min/day)
+- Browse feed: 5 min
+- Like 8-12 posts
+- Reply to 3-5 posts (be conversational, authentic)
+- Repost 1-2 interesting posts
+- Post 1-3 original posts
+
+### Weekly Goals
+- 1-2 reply-chain threads per week
+- Follow 5-10 relevant accounts
+- Explore and subscribe to custom feeds in your niche
+- Use alt text on all images
+
+### Growth Pattern
+```
+Week 1-2: Follow relevant accounts, engage with replies
+Week 3-4: Start posting (2-3/day) + reply chains
+Month 2: Build a consistent posting cadence
+Month 3+: Leverage custom feeds for topic-specific growth
+```
+
+### Community-Specific Tips
+- Bluesky community STRONGLY rejects engagement bait
+- Be authentic — the vibe is early Twitter (friendly, nerdy, honest)
+- Share original thoughts, not recycled X content
+- Custom feeds are your discovery tool — subscribe to relevant ones
+- Starter packs help new users find you — create or join one
+- The community values accessibility (always use alt text)
 
 ## Best Practices
 - Post 2-5 times daily for visibility

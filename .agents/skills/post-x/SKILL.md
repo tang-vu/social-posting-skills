@@ -69,10 +69,20 @@ X (formerly Twitter) is the real-time social platform for tech, media, and break
 6. Click the "Post" button
 7. Verify tweet appears on the timeline
 
-### Posting a Thread
-1. Type first tweet and click the "+" button to add another tweet
-2. Type each subsequent tweet
-3. Click "Post all" to publish the entire thread
+### Posting a Thread (Multi-Tweet)
+1. Type first tweet in the composer
+2. Click the "+" button (appears after you start typing) to add another tweet
+3. A new text area appears below — type the next tweet there
+4. Repeat steps 2-3 for all tweets in the thread (no limit)
+5. Click "Post all" to publish the entire thread at once
+6. Each tweet in the thread is linked — readers can swipe through
+
+> **Thread Tips:**
+> - Number your tweets: "1/", "2/", etc. so readers know it's a thread
+> - First tweet is the hook — it determines if people read the rest
+> - Last tweet should contain your CTA or link
+> - 5-10 tweets is the sweet spot for engagement
+> - Each tweet should stand on its own AND connect to the thread
 
 ## Content Format
 
@@ -123,6 +133,61 @@ Tweet 9: {CTA}
 - Must use a different profile picture than the imitated account
 - Violations can lead to account suspension
 
+## Pre-Posting Engagement (Before You Post)
+
+> Do this 15-30 minutes BEFORE posting your own content to warm up the algorithm.
+
+1. **Browse your feed** for 5-10 minutes
+2. **Like 5-10 tweets** from accounts in your niche
+3. **Reply to 3-5 tweets** with genuine, thoughtful comments (not just "Great post!")
+4. **Quote tweet 1-2 posts** with your own take or insight
+5. **Follow 1-2 new accounts** that are relevant to your niche
+
+This signals to the algorithm that you're an active, engaged user — your next post will get better distribution.
+
+## Post-Posting Engagement (After You Post)
+
+> The first 30-60 minutes after posting are CRITICAL for reach.
+
+1. **Stay online** for at least 30 minutes after posting
+2. **Reply to every comment** on your tweet within the first hour
+3. **Like comments** on your tweet to encourage more replies
+4. **Self-reply with link**: If you have a link, reply to your own tweet with it
+5. **Continue engaging** with other tweets (don't just post and leave)
+6. **Check back** 2-3 hours later to reply to late comments
+
+## Account Nurturing (Daily Routine)
+
+> A healthy X account needs consistent daily activity, not just posting.
+
+### Daily Minimum (15-20 min/day)
+- Browse feed: 5-10 min (scroll naturally, read posts)
+- Like 10-15 tweets
+- Reply to 5-10 tweets (be genuinely helpful or insightful)
+- Quote tweet 1-2 posts
+- Post 1-3 original tweets
+
+### Weekly Goals
+- 1-2 threads per week (high-effort content)
+- Follow 10-20 relevant accounts
+- Unfollow accounts that don't follow back (but not mass-unfollow)
+- Pin your best performing tweet/thread
+
+### Growth Pattern
+```
+Week 1-2: Focus on commenting and replying (build karma)
+Week 3-4: Start posting original tweets (1-2/day)
+Month 2: Add threads (1/week) and quote tweets
+Month 3+: Full routine — post, engage, thread, repeat
+```
+
+### What Makes Engagement "Genuine"
+- Add your own perspective ("I disagree because..." or "This reminds me of...")
+- Ask follow-up questions
+- Share related experience or data
+- Tag relevant people ONLY if they'd genuinely find it useful
+- Don't copy-paste the same reply on multiple tweets
+
 ## Best Practices
 - Tweet 3-5 times per day (mix of original + replies)
 - Thread every 2-3 days for in-depth content
@@ -145,6 +210,18 @@ Tweet 9: {CTA}
 - ASCII English only — no emoji or special characters via automation
 - t.co link shortening counts against character limit
 - Unverified accounts have significantly lower post view limits
+
+## Engagement Ratios
+
+| Activity | % of Time |
+|----------|----------|
+| Replying to others | 40% |
+| Original tweets | 25% |
+| Threads | 15% |
+| Quote tweets | 10% |
+| Retweets | 10% |
+
+> The #1 mistake is posting without engaging. X rewards conversation, not broadcasting.
 
 ## Related Skills
 - `content-writing` — Thread templates and hook formulas

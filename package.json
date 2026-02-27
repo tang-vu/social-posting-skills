@@ -1,7 +1,7 @@
 {
   "name": "social-posting-skills",
-  "version": "1.1.1",
-  "description": "Curated AI agent skills for posting content across 12 social media platforms. Built for Antigravity, Claude Code, Gemini CLI.",
+  "version": "2.0.0",
+  "description": "Curated AI agent skills for posting, engaging, and nurturing accounts across 12 social media platforms. Includes multi-thread posting, pre/post engagement workflows, and account growth strategies. Built for Antigravity, Claude Code, Gemini CLI.",
   "license": "MIT",
   "bin": {
     "social-posting-skills": "bin/install.js"

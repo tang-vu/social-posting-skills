@@ -20,7 +20,19 @@ When the user asks you to post content to social media, follow this workflow:
 3. Generate images using the `generate_image` tool
 4. Save to `posts/images/`
 
-## Step 3: Post to Each Platform
+## Step 3: Pre-Posting Engagement
+
+> Do this 15-30 minutes BEFORE posting. Each platform skill has specific pre-posting engagement steps.
+
+1. Open each target platform in the browser
+2. **Scroll the feed** for 5-10 minutes (act like a real user)
+3. **Like/react to 5-8 posts** from accounts in your niche
+4. **Reply to 2-3 posts** with genuine, thoughtful comments
+5. This warms up the algorithm — your next post will get better distribution
+
+> See each platform's SKILL.md for platform-specific pre-posting engagement steps.
+
+## Step 4: Post to Each Platform
 
 For each target platform, read the corresponding skill file first:
 
@@ -92,7 +104,19 @@ For each target platform, read the corresponding skill file first:
 3. If VPN active: attempt browser automation at `https://medium.com/new-story`
 4. If no VPN: save draft to `posts/drafts/medium_post.md` for manual posting
 
-## Step 4: Report Results
+## Step 5: Post-Posting Engagement
+
+> Do this IMMEDIATELY after posting. The first 30-60 minutes are the "golden hour" for each platform.
+
+1. **Stay online** for at least 30-60 minutes after posting
+2. **Reply to every comment** on your posts across all platforms
+3. **Like/react to comments** on your posts
+4. **Continue engaging** with other posts on the platform (don't post-and-leave)
+5. **Check back** 2-4 hours later for late comments
+
+> See each platform's SKILL.md for platform-specific post-posting engagement steps.
+
+## Step 6: Report Results
 1. Create a summary table with status per platform:
    | Platform | Status | Link |
    |----------|--------|------|
@@ -101,6 +125,41 @@ For each target platform, read the corresponding skill file first:
    | ... | ... | ... |
 2. Include any error messages or screenshots
 3. Provide links to published posts where available
+
+## Multi-Thread Posting
+
+Some platforms support posting multiple connected posts at once:
+
+### X (Twitter) Threads
+- Use the "+" button in the composer to add tweets
+- Each new text area: `tweetTextarea_0`, `tweetTextarea_1`, etc.
+- Click "Post all" to publish the entire thread at once
+- 5-10 tweets is the sweet spot
+
+### Threads Multi-Thread
+- Use the **"Add to thread"** button in the composer
+- Multiple text areas appear — one for each post
+- Click "Post" to publish ALL posts as a connected chain
+- Great for tutorials, stories, step-by-step content
+
+### Bluesky Threads
+- No native multi-thread in composer
+- Post first post → reply to yourself → repeat
+- Keep threads shorter (3-5 posts)
+
+## Account Nurturing Guide
+
+> For growing new accounts. Each platform's SKILL.md has specific nurturing routines.
+
+### Quick Reference
+| Platform | Daily Time | Key Activity | Golden Rule |
+|----------|-----------|-------------|-------------|
+| X | 15-20 min | Reply to 5-10 tweets | 40% time replying |
+| Threads | 10-15 min | Like & reply casually | Be conversational |
+| Bluesky | 10-15 min | Join custom feeds | Be authentic |
+| Facebook | 15-20 min | Groups + reactions | Groups > Pages |
+| LinkedIn | 20-30 min | Comment 50+ words | Comments > Posts |
+| Reddit | 15-20 min | Build karma via comments | 90/10 rule |
 
 ## Known Limitations
 - **Vietnamese text**: Playwright cannot type Unicode diacritics — use English only
