@@ -10,9 +10,10 @@ When the user asks you to post content to social media, follow this workflow:
 ## Step 1: Content Preparation
 1. Read the content writing skill at `.agents/skills/content-writing/SKILL.md`
 2. Read the topic/draft from the user or from a file in `posts/drafts/`
-3. Generate platform-adapted versions for each target platform
-4. Save each draft to `posts/drafts/{platform}_post.md`
-5. Ask user for approval before posting (unless they said "just post it")
+3. If the post needs current X/Twitter source context, read `.agents/skills/x-source-research/SKILL.md` and save reviewed notes to `posts/drafts/x_source_research.md`
+4. Generate platform-adapted versions for each target platform
+5. Save each draft to `posts/drafts/{platform}_post.md`
+6. Ask user for approval before posting (unless they said "just post it")
 
 ## Step 2: Image Generation (if needed)
 1. Read the image generation skill at `.agents/skills/image-generation/SKILL.md`
@@ -63,9 +64,10 @@ For each target platform, read the corresponding skill file first:
 
 ### X / Twitter (Auto)
 1. Read `.agents/skills/post-x/SKILL.md`
-2. Navigate to `https://x.com/home`
-3. Open composer, type content in small chunks (ASCII English only, **NO links in main tweet**), click Post
-4. **Reply to your own tweet** with the URL
+2. If `posts/drafts/x_source_research.md` exists, use it only as reviewed source context for the final draft
+3. Navigate to `https://x.com/home`
+4. Open composer, type content in small chunks (ASCII English only, **NO links in main tweet**), click Post
+5. **Reply to your own tweet** with the URL
 
 ### Product Hunt (MANUAL -- Cloudflare bot detection)
 1. Read `.agents/skills/post-producthunt/SKILL.md`

@@ -6,6 +6,7 @@
 |-------|------|-------------|
 | `content-writing` | `.agents/skills/content-writing/SKILL.md` | Adapt one topic into platform-optimized posts with hooks, templates, and SEO |
 | `image-generation` | `.agents/skills/image-generation/SKILL.md` | Generate images sized for each platform with prompt engineering guides |
+| `x-source-research` | `.agents/skills/x-source-research/SKILL.md` | Gather reviewed X/Twitter source context with TweetClaw before drafting posts |
 
 ## Platform Skills
 

@@ -57,6 +57,16 @@ X (formerly Twitter) is the real-time social platform for tech, media, and break
 
 **Best Practice**: 80/20 rule — automate 80% of routine tasks, keep 20% for genuine human engagement.
 
+## Optional Source Research With TweetClaw
+
+When the user wants a tweet or thread grounded in current X/Twitter conversations, read `.agents/skills/x-source-research/SKILL.md` before drafting.
+
+- Use TweetClaw through OpenClaw only as a separate source-intake plugin.
+- Keep source notes in `posts/drafts/x_source_research.md`.
+- Use only reviewed source URLs, tweet IDs, handles, excerpts, public metrics, media references, monitor summaries, webhook summaries, or giveaway evidence in the draft.
+- Keep TweetClaw write-like actions inside OpenClaw/TweetClaw approval flow.
+- Keep this `post-x` skill responsible for browser posting, user approval, and final publication.
+
 ## Posting Steps (Browser Automation)
 
 1. Navigate to `https://x.com/home`

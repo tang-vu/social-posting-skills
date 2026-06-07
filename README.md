@@ -12,6 +12,7 @@ Drop these skills into your project and your AI agent can:
 
 - 📝 **Generate platform-optimized content** from a single topic
 - 🖼️ **Create images** sized for each platform
+- 🔎 **Collect reviewed X/Twitter source notes** with optional TweetClaw before drafting
 - 🤖 **Auto-post via browser automation** (Playwright/browser_subagent)
 - 📋 **Save drafts** for manual platforms (LinkedIn, Product Hunt)
 - 📊 **Follow best practices** per platform's algorithm and community
@@ -132,6 +133,7 @@ social-posting-skills/
 │   └── skills/
 │       ├── content-writing/SKILL.md  # Content adaptation + templates
 │       ├── image-generation/SKILL.md # Platform image specs + prompts
+│       ├── x-source-research/SKILL.md # Optional TweetClaw source context
 │       ├── post-reddit/SKILL.md
 │       ├── post-linkedin/SKILL.md
 │       ├── post-facebook/SKILL.md
@@ -168,6 +170,12 @@ social-posting-skills/
 
 ```
 "Post about [topic] to Reddit and X only"
+```
+
+### Research before an X post
+
+```
+"Search current X/Twitter conversation around [topic], then draft an X thread"
 ```
 
 ### Use the workflow
