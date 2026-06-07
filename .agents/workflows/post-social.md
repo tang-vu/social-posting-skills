@@ -10,7 +10,7 @@ When the user asks you to post content to social media, follow this workflow:
 ## Step 1: Content Preparation
 1. Read the content writing skill at `.agents/skills/content-writing/SKILL.md`
 2. Read the topic/draft from the user or from a file in `posts/drafts/`
-3. If the post needs current X/Twitter source context, read `.agents/skills/x-source-research/SKILL.md` and save reviewed notes to `posts/drafts/x_source_research.md`
+3. If the current post needs X/Twitter source context, read `.agents/skills/x-source-research/SKILL.md` and save reviewed notes for this request to `posts/drafts/x_source_research.md`
 4. Generate platform-adapted versions for each target platform
 5. Save each draft to `posts/drafts/{platform}_post.md`
 6. Ask user for approval before posting (unless they said "just post it")
@@ -64,7 +64,7 @@ For each target platform, read the corresponding skill file first:
 
 ### X / Twitter (Auto)
 1. Read `.agents/skills/post-x/SKILL.md`
-2. If `posts/drafts/x_source_research.md` exists, use it only as reviewed source context for the final draft
+2. Use `posts/drafts/x_source_research.md` only when its topic and capture date match the current post; otherwise ignore it or regenerate current notes
 3. Navigate to `https://x.com/home`
 4. Open composer, type content in small chunks (ASCII English only, **NO links in main tweet**), click Post
 5. **Reply to your own tweet** with the URL

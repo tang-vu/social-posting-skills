@@ -62,7 +62,8 @@ X (formerly Twitter) is the real-time social platform for tech, media, and break
 When the user wants a tweet or thread grounded in current X/Twitter conversations, read `.agents/skills/x-source-research/SKILL.md` before drafting.
 
 - Use TweetClaw through OpenClaw only as a separate source-intake plugin.
-- Keep source notes in `posts/drafts/x_source_research.md`.
+- Keep source notes in `posts/drafts/x_source_research.md` only for the current request.
+- Before using existing notes, confirm their topic and capture date match the current post; otherwise ignore or regenerate them.
 - Use only reviewed source URLs, tweet IDs, handles, excerpts, public metrics, media references, monitor summaries, webhook summaries, or giveaway evidence in the draft.
 - Keep TweetClaw write-like actions inside OpenClaw/TweetClaw approval flow.
 - Keep this `post-x` skill responsible for browser posting, user approval, and final publication.
