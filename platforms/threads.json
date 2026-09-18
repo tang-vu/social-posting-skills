@@ -1,0 +1,62 @@
+{
+  "id": "threads",
+  "displayName": "Threads",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://developers.facebook.com/docs/threads"],
+    "notes": "500-char limit documented via Threads API docs. Text attachments (10k) and feature churn are recent; re-verify quarterly."
+  },
+  "constraints": {
+    "post": { "maxChars": { "value": 500, "confidence": "documented" } },
+    "textAttachment": { "maxChars": { "value": 10000, "confidence": "community-heuristic", "note": "expandable attachment added 2025; verify before relying" } }
+  },
+  "thread": { "supported": true, "style": "composer-chain", "recommendedMax": 8 },
+  "media": {
+    "supported": true, "maxImages": 10, "maxImageMB": 8,
+    "imageSize": [1080, 1080], "altText": true,
+    "formats": ["png", "jpg", "webp"]
+  },
+  "links": {
+    "policy": "reply-preferred", "confidence": "community-heuristic",
+    "notes": "Preview cards render inline. Reply-placement for links is strategy folklore; not a documented penalty."
+  },
+  "hashtags": { "supported": true, "maxRecommended": 1, "notes": "Topic tags, not hashtag strings; one tag per post" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser", "api"],
+    "observe": ["manual-import"], "thread": true, "media": true
+  },
+  "publishing": {
+    "defaultMode": "agent-browser",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["THREADS_ACCESS_TOKEN", "THREADS_USER_ID"],
+      "docs": "https://developers.facebook.com/docs/threads",
+      "notes": "Official Threads API (Meta) supports publishing; requires Meta developer app."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://www.threads.net/",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "composer": ["div[role='textbox']", "[data-lexical-editor='true']"],
+      "composeTrigger": ["a[href='/composer']", "[aria-label*='thread' i]"],
+      "addToThread": ["button:has-text('Add to thread')", "[aria-label*='Add to thread' i]"],
+      "postButton": ["div[role='button']:has-text('Post')", "button:has-text('Post')"],
+      "challenge": ["text=Verify you are human", "text=unusual activity"]
+    }
+  },
+  "rateLimit": {
+    "confidence": "unknown",
+    "notes": "No public per-day number; pace conservatively."
+  },
+  "culture": {
+    "audience": "General social audience, 18-35, Instagram-adjacent",
+    "tone": "casual, warm, conversational",
+    "works": ["short personal takes", "reply-chain storytelling", "visual posts"],
+    "avoid": ["corporate voice", "link-heavy posts", "cross-posted identical text"]
+  }
+}

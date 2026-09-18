@@ -1,0 +1,52 @@
+{
+  "id": "substack",
+  "displayName": "Substack",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://support.substack.com/"],
+    "notes": "No public write API for posts. Notes feature exists for short-form. Newsletter posts are email + web."
+  },
+  "constraints": {
+    "title": { "required": true },
+    "subtitle": { "maxChars": { "value": 160, "confidence": "community-heuristic", "note": "email preview length guidance" } },
+    "body": { "maxChars": null }
+  },
+  "thread": { "supported": false, "style": "none", "notes": "Substack Notes is short-form; not a thread system" },
+  "media": {
+    "supported": true, "maxImageMB": 5,
+    "imageSize": [1100, 220], "altText": true,
+    "formats": ["png", "jpg", "gif"], "notes": "Header/hero image plus inline"
+  },
+  "links": { "policy": "inline", "confidence": "documented" },
+  "hashtags": { "supported": false, "maxRecommended": 0, "notes": "Sections/tags organize content instead" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "api": { "available": false, "implemented": false, "notes": "No public write API." },
+    "notes": "Draft export + optional agent-browser assist. Publication sends email to subscribers — always require explicit approval."
+  },
+  "automation": {
+    "entryUrl": "https://substack.com/publish/post",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "titleInput": ["[data-testid='title-input']", "textarea[placeholder*='title' i]"],
+      "bodyInput": ["div[role='textbox']", ".public-DraftEditor-content"],
+      "publishButton": ["button:has-text('Publish')", "[data-testid='publish-button']"],
+      "challenge": ["text=Verify you are human"]
+    }
+  },
+  "rateLimit": { "confidence": "unknown", "notes": "Cadence is a subscriber-expectation question, not a platform limit." },
+  "culture": {
+    "audience": "Newsletter subscribers; niche topic readers",
+    "tone": "personal, essayistic, direct",
+    "works": ["consistent sections", "personal voice", "takeaways", "email-subject-line quality titles"],
+    "avoid": ["clickbait subjects", "off-topic blasts", "unannounced cross-posts"]
+  }
+}

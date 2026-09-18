@@ -1,0 +1,32 @@
+{
+  "name": "post-hackernews",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Hacker News — Show HN and link submissions",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "publish:agent-browser",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/hackernews.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "hackernews",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/hackernews.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

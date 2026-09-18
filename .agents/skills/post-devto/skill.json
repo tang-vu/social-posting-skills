@@ -1,0 +1,34 @@
+{
+  "name": "post-devto",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Dev.to — markdown articles via Forem API",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:api",
+    "publish:agent-browser",
+    "publish:manual",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/devto.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "devto",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/devto.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

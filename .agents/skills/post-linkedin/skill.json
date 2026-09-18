@@ -1,0 +1,32 @@
+{
+  "name": "post-linkedin",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on LinkedIn — professional narrative posts",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/linkedin.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "linkedin",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/linkedin.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

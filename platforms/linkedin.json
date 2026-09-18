@@ -1,0 +1,51 @@
+{
+  "id": "linkedin",
+  "displayName": "LinkedIn",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api"],
+    "notes": "Char limit documented. 'Links in body reduce reach' figures circulating online are community-heuristics, not LinkedIn-published numbers."
+  },
+  "constraints": {
+    "post": { "maxChars": { "value": 3000, "confidence": "documented" } }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "maxImages": 9, "maxImageMB": 10,
+    "imageSize": [1200, 627], "altText": true,
+    "formats": ["png", "jpg", "gif"], "documents": ["pdf-carousel"]
+  },
+  "links": {
+    "policy": "first-comment", "confidence": "community-heuristic",
+    "notes": "Common practice: keep body link-free and comment the link. Treat reach claims as heuristic."
+  },
+  "hashtags": { "supported": true, "maxRecommended": 5 },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "api"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["LINKEDIN_ACCESS_TOKEN", "LINKEDIN_AUTHOR_URN"],
+      "docs": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+      "notes": "Official Posts API exists; requires LinkedIn developer app + OAuth. Browser automation is prohibited by LinkedIn ToS — adapter intentionally omits agent-browser mode."
+    }
+  },
+  "automation": null,
+  "rateLimit": {
+    "confidence": "community-heuristic",
+    "notes": "Unofficial guidance: modest daily posting. LinkedIn ToS restricts automation."
+  },
+  "culture": {
+    "audience": "Professionals, B2B, hiring and industry communities",
+    "tone": "professional, first-person, substantive",
+    "works": ["specific lessons with numbers", "failure-to-learning narratives", "document carousels", "thoughtful comments on others' posts"],
+    "avoid": ["generic motivational content", "corporate jargon", "mass tagging", "obvious AI-template text"]
+  }
+}

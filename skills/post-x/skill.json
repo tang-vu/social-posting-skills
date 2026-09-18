@@ -1,0 +1,11 @@
+{
+  "name": "post-x",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on X (Twitter) — single posts and threads",
+  "capabilities": ["generate", "validate", "preview", "draft", "publish:agent-browser", "publish:manual", "thread", "media", "observe:manual-import"],
+  "inputs": ["campaign item", "content graph", "platforms/x.json"],
+  "outputs": ["x draft (post or thread)", "draft package", "playbook", "receipt"],
+  "platform": "x",
+  "permissions": ["filesystem:drafts", "browser-automation:agent-mediated"],
+  "references": ["platforms/x.json", "skills/social-campaign/SKILL.md"]
+}

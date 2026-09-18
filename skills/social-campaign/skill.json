@@ -1,0 +1,11 @@
+{
+  "name": "social-campaign",
+  "version": "3.0.0",
+  "description": "Turn one source artifact into a reviewable, platform-native distribution campaign under human control",
+  "capabilities": ["orchestrate", "ingest", "content-graph", "adapt", "preview", "approve", "publish", "draft", "observe", "learn"],
+  "inputs": ["source artifact (README, release, changelog, post, URL, repo, package)", "campaign intent"],
+  "outputs": ["campaign", "content graph", "platform items", "approval package", "draft packages", "receipts", "observations"],
+  "platform": null,
+  "permissions": ["filesystem:.social-campaigns", "network:bounded-fetch", "cli:social-posting-skills"],
+  "references": ["src/core/", "platforms/", "docs/SAFETY.md"]
+}

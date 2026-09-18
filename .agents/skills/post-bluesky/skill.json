@@ -1,0 +1,35 @@
+{
+  "name": "post-bluesky",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Bluesky — posts and reply-chain threads via AT Protocol API",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:api",
+    "publish:agent-browser",
+    "publish:manual",
+    "thread",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/bluesky.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "bluesky",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/bluesky.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

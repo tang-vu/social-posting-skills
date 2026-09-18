@@ -1,0 +1,60 @@
+{
+  "id": "devto",
+  "displayName": "Dev.to",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "high",
+    "sources": ["https://developers.forem.com/api/v1"],
+    "notes": "Forem API is documented (articles endpoint, API key). Tag limit of 4 is documented. Canonical URL supported for cross-posts."
+  },
+  "constraints": {
+    "title": { "maxChars": { "value": 250, "confidence": "documented" }, "required": true },
+    "body": { "maxChars": null, "notes": "No hard limit; 1500-3000 word reads perform best (heuristic)" },
+    "tags": { "max": { "value": 4, "confidence": "documented" } }
+  },
+  "thread": { "supported": false, "style": "none", "notes": "Series grouping exists instead" },
+  "media": {
+    "supported": true, "maxImages": 1, "maxImageMB": 10,
+    "imageSize": [1000, 420], "altText": true,
+    "formats": ["png", "jpg"], "notes": "Cover image; inline images via markdown"
+  },
+  "links": { "policy": "inline", "confidence": "documented", "notes": "Full markdown links; canonical_url field for syndicated content" },
+  "hashtags": { "supported": true, "maxRecommended": 4, "notes": "Tags are first-class discovery metadata" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser", "api"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "api",
+    "api": {
+      "available": true, "implemented": true,
+      "env": ["DEVTO_API_KEY"],
+      "docs": "https://developers.forem.com/api/v1#tag/articles",
+      "notes": "Official Forem API. API key from dev.to/settings/extensions. POST /api/articles supports draft via published:false."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://dev.to/new",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "titleInput": ["#article-form-title", "textarea[placeholder*='title' i]"],
+      "bodyInput": ["#article_body_markdown", ".crayons-article-form__body"],
+      "tagsInput": ["#tag-input", "input[placeholder*='tags' i]"],
+      "publishButton": ["button:has-text('Publish')"],
+      "challenge": ["text=Verify you are human"]
+    }
+  },
+  "rateLimit": {
+    "confidence": "documented",
+    "notes": "Forem API rate-limits per key; new accounts may have posting limits against spam."
+  },
+  "culture": {
+    "audience": "Developers of all levels; tutorial and career content",
+    "tone": "helpful, technical, humble",
+    "works": ["step-by-step tutorials", "honest postmortems", "annotated code", "series"],
+    "avoid": ["content-free announcements", "keyword stuffing", "paywalled CTAs"]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "facebook",
+  "displayName": "Facebook",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://developers.facebook.com/docs/pages-api"],
+    "notes": "63,206 char limit is the long-standing documented figure. Meta requires AI-content labeling for synthetic media. Groups are rules-gated communities — group rules apply before platform norms."
+  },
+  "constraints": {
+    "post": { "maxChars": { "value": 63206, "confidence": "documented", "note": "far beyond effective length; keep posts short" } }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "maxImages": 10, "maxImageMB": 8,
+    "imageSize": [1200, 630], "altText": true,
+    "formats": ["png", "jpg", "gif"]
+  },
+  "links": {
+    "policy": "first-comment", "confidence": "community-heuristic",
+    "notes": "Preview cards render inline. First-comment link placement is strategy folklore, not a documented rule."
+  },
+  "hashtags": { "supported": true, "maxRecommended": 2 },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser", "api"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "perCommunityRules": "Facebook Groups have admin-enforced rules; many require post approval. The 'groupId' target requires the user to confirm group rules allow the content type.",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["FB_PAGE_ACCESS_TOKEN", "FB_PAGE_ID"],
+      "docs": "https://developers.facebook.com/docs/pages-api",
+      "notes": "Pages API posts to Pages you manage, not personal profiles. Requires Meta app review for broader scopes."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://www.facebook.com/",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "composer": ["div[role='textbox']", "[aria-label*='mind' i]"],
+      "composeTrigger": ["[role='button']:has-text('on your mind')"],
+      "postButton": ["div[role='button'][aria-label='Post']", "div[role='button']:has-text('Post')"],
+      "challenge": ["text=Verify you are human", "text=unusual activity"]
+    }
+  },
+  "rateLimit": { "confidence": "unknown", "notes": "Group spam controls are admin-configured; pace conservatively." },
+  "culture": {
+    "audience": "General public 25-55+, local communities, interest Groups",
+    "tone": "friendly, plain-spoken, community-minded",
+    "works": ["questions to the community", "Group-appropriate shares", "native media"],
+    "avoid": ["engagement bait ('like if you agree')", "cross-posted identical text", "ignoring Group rules", "undisclosed promotion"]
+  }
+}

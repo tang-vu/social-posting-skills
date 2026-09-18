@@ -1,0 +1,60 @@
+{
+  "id": "bluesky",
+  "displayName": "Bluesky",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "high",
+    "sources": ["https://docs.bsky.app/", "https://atproto.com/"],
+    "notes": "AT Protocol API is documented and public. 300-char post limit is a documented lexicon constraint (app.bsky.feed.post)."
+  },
+  "constraints": {
+    "post": { "maxChars": { "value": 300, "confidence": "documented", "note": "grapheme-aware; enforce by codepoints" } }
+  },
+  "thread": { "supported": true, "style": "reply-chain", "recommendedMax": 5 },
+  "media": {
+    "supported": true, "maxImages": 4, "maxImageMB": 1,
+    "imageSize": [1200, 675], "altText": true,
+    "formats": ["png", "jpg", "webp"]
+  },
+  "links": {
+    "policy": "inline", "confidence": "documented",
+    "notes": "Links create facets; a link card can be attached explicitly. Reply-placement is a style choice, not a rule."
+  },
+  "hashtags": { "supported": true, "maxRecommended": 3, "notes": "Hashtag facets are supported since 2024; earlier guidance saying 'no hashtags' is outdated" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser", "api"],
+    "observe": ["manual-import"], "thread": true, "media": true
+  },
+  "publishing": {
+    "defaultMode": "api",
+    "api": {
+      "available": true, "implemented": true,
+      "env": ["BSKY_HANDLE", "BSKY_APP_PASSWORD"],
+      "docs": "https://docs.bsky.app/docs/api/com/atproto/server/createSession",
+      "notes": "Official XRPC API. App-password scoped auth; credentials read from environment only, never stored."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://bsky.app/",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "composeButton": ["[data-testid='composeFAB']", "button[aria-label*='compose' i]", "button:has-text('New post')"],
+      "composer": ["[data-testid='composerTextInput']", "div[role='textbox']"],
+      "postButton": ["[data-testid='composerPublishBtn']", "button:has-text('Post')"],
+      "challenge": ["text=Verify you are human"]
+    }
+  },
+  "rateLimit": {
+    "confidence": "documented",
+    "notes": "AT Protocol enforces per-account write rate limits; conservative pacing is recommended."
+  },
+  "culture": {
+    "audience": "Tech, design, journalism, early adopters",
+    "tone": "casual, sincere, conversational",
+    "works": ["genuine enthusiasm", "short threads", "direct demos and screenshots"],
+    "avoid": ["corporate voice", "engagement bait", "cross-posted identical text"]
+  }
+}

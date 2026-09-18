@@ -1,0 +1,41 @@
+{
+  "id": "indiehackers",
+  "displayName": "IndieHackers",
+  "version": "2026-09-18",
+  "status": "degraded",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "low",
+    "sources": [],
+    "notes": "Community activity has declined since acquisition; group structure and posting flow change without notice. Re-verify before any automation attempt."
+  },
+  "constraints": {
+    "title": { "required": true },
+    "body": { "maxChars": null, "notes": "200-500 words is the community sweet spot (heuristic)" }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "altText": false,
+    "imageSize": [1200, 630], "formats": ["png", "jpg"]
+  },
+  "links": { "policy": "inline", "confidence": "documented" },
+  "hashtags": { "supported": false, "maxRecommended": 0, "notes": "Posts are filed under topic groups instead" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "perCommunityRules": "Posts are filed under groups; the 'group' target should match the group's topic norms.",
+    "api": { "available": false, "implemented": false, "notes": "No public API." }
+  },
+  "automation": null,
+  "rateLimit": { "confidence": "unknown" },
+  "culture": {
+    "audience": "Bootstrapped founders, indie makers",
+    "tone": "transparent, numbers-first, practical",
+    "works": ["real revenue/user numbers", "what-worked / what-didn't breakdowns", "specific tactics"],
+    "avoid": ["vague inspiration", "unverifiable claims", "drive-by promotion"]
+  }
+}

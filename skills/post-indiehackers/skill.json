@@ -1,0 +1,32 @@
+{
+  "name": "post-indiehackers",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on IndieHackers — transparent milestones",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/indiehackers.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "indiehackers",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/indiehackers.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}
