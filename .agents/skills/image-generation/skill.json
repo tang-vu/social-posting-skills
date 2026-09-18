@@ -1,0 +1,26 @@
+{
+  "name": "image-generation",
+  "version": "3.0.0",
+  "description": "Plan, describe and register campaign media — platform-sized visuals with alt text and provenance",
+  "capabilities": [
+    "media",
+    "alt-text",
+    "manifest"
+  ],
+  "inputs": [
+    "content graph",
+    "campaign intent"
+  ],
+  "outputs": [
+    "platform-native drafts",
+    "media manifest entries"
+  ],
+  "platform": null,
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "skills/social-campaign/SKILL.md",
+    "platforms/"
+  ]
+}

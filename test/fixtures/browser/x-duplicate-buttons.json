@@ -1,0 +1,16 @@
+{
+  "name": "x-duplicate-buttons",
+  "description": "Sanitized X state with TWO elements matching the Post button selector — ambiguity must abort",
+  "dom": {
+    "tag": "body",
+    "children": [
+      { "tag": "main", "children": [
+        { "tag": "div", "attrs": { "data-testid": "primaryColumn" }, "children": [
+          { "tag": "div", "attrs": { "data-testid": "tweetTextarea_0", "role": "textbox" }, "text": "" },
+          { "tag": "button", "attrs": { "data-testid": "tweetButtonInline" }, "text": "Post" },
+          { "tag": "button", "attrs": { "data-testid": "tweetButtonInline" }, "text": "Post" }
+        ]}
+      ]}
+    ]
+  }
+}

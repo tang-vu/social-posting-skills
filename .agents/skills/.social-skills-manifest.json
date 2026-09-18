@@ -1,0 +1,69 @@
+{
+  "package": "social-posting-skills",
+  "version": "3.0.0",
+  "kind": "project",
+  "installedAt": "2026-09-18T16:09:55.448Z",
+  "target": "D:\\Github\\social-posting-skills\\.agents\\skills",
+  "skills": [
+    {
+      "name": "content-writing",
+      "hash": "e52ffa2c764b9efa854e2c4502d63056f8dcd983bc418f5956175db17e11e670"
+    },
+    {
+      "name": "image-generation",
+      "hash": "284983d1aec9cf58707ed8557ba306fea6c4c8cb8f8c39bea2affe0fd118f38e"
+    },
+    {
+      "name": "post-bluesky",
+      "hash": "e75c3418321a12be54cc073b631f6190351ab63b0ed4878817c90b42521c318a"
+    },
+    {
+      "name": "post-devto",
+      "hash": "436ce1f6e22179f15f7f5d484438b15c0a3d1bb28fa2aa9abc4d0f774c292da6"
+    },
+    {
+      "name": "post-facebook",
+      "hash": "ef1c6d44b895e4e5ed71073e3124ad8c33c6f4ed55a7afdcc2e6d8c173132408"
+    },
+    {
+      "name": "post-hackernews",
+      "hash": "1b0c39672cf112e3b7b7ea954441c3a070e25d581bd626611feb73983d4491f3"
+    },
+    {
+      "name": "post-indiehackers",
+      "hash": "1891f722184f491e54dee41a2cce7c90cc2fecddbe7502d1170d464111cb89cc"
+    },
+    {
+      "name": "post-linkedin",
+      "hash": "211b36a3f3a7bf6bc7f92096c57d44442d2ba2347c53084a19e6d86c4e4d91b4"
+    },
+    {
+      "name": "post-medium",
+      "hash": "afaba0d9f1689a269103146653bc7552f8f5ebb4f090addccfb7a736aba60335"
+    },
+    {
+      "name": "post-producthunt",
+      "hash": "be840e5238241b506fd9555bbef6a8eba9d3e08be35ff329d093c27fbf570677"
+    },
+    {
+      "name": "post-reddit",
+      "hash": "1c7b6fea8cf612838888c06d9e6d18a5a9c402a0ddb8dfe83ada1ce0907b81d7"
+    },
+    {
+      "name": "post-substack",
+      "hash": "81241f8cdf07834a84cb53eac4dfe31a1ae2e9cb75e507a02b8d8464be5ec49a"
+    },
+    {
+      "name": "post-threads",
+      "hash": "343f6b258b07fae58c098b7c75d1c032239b87f9d85ef6c31837c556506ca5ae"
+    },
+    {
+      "name": "post-x",
+      "hash": "054e1b477db540ed0d1525bc0007829d87665a2c211a5f042af1774df65c8983"
+    },
+    {
+      "name": "social-campaign",
+      "hash": "06ec694f1cce39ce330666a54f4bca97faec66598bd203022ec1a4efcffb12a9"
+    }
+  ]
+}

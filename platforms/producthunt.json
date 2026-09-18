@@ -1,0 +1,52 @@
+{
+  "id": "producthunt",
+  "displayName": "Product Hunt",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://help.producthunt.com/"],
+    "notes": "Launch mechanics (tagline 60 chars, maker comment, one launch per product) documented in PH help center. Cloudflare bot detection observed historically — automation is not recommended."
+  },
+  "constraints": {
+    "tagline": { "maxChars": { "value": 60, "confidence": "documented" }, "required": true },
+    "name": { "maxChars": { "value": 40, "confidence": "documented" }, "required": true },
+    "body": { "maxChars": null, "notes": "Description + first maker comment" }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "maxImages": 8, "maxImageMB": 3,
+    "imageSize": [1270, 760], "altText": true,
+    "formats": ["png", "jpg", "gif"], "required": true,
+    "notes": "Gallery images effectively required for launches; demo GIF strongly recommended"
+  },
+  "links": { "policy": "inline", "confidence": "documented", "notes": "Product URL is a required launch field" },
+  "hashtags": { "supported": true, "maxRecommended": 3, "notes": "Topic tags selected from PH's list" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["PH_API_TOKEN"],
+      "docs": "https://api.producthunt.com/v2/docs",
+      "notes": "PH API v2 (GraphQL) is read-oriented; launch submission is web-only. Draft export is the supported path."
+    },
+    "notes": "Historically protected by Cloudflare bot detection. Manual launch is the reliable path; the system produces a complete launch-kit draft."
+  },
+  "automation": null,
+  "rateLimit": {
+    "confidence": "documented",
+    "notes": "One launch per product; re-launches allowed only for substantial updates."
+  },
+  "culture": {
+    "audience": "Early adopters, founders, investors, tech journalists",
+    "tone": "clear, confident, maker-voiced",
+    "works": ["'what it does for whom' taglines", "demo GIF", "personal maker comment", "launch-day presence answering comments"],
+    "avoid": ["corporate description", "vague taglines", "launching then disappearing", "vote solicitation off-platform"]
+  }
+}

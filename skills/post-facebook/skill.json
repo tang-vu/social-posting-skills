@@ -1,0 +1,33 @@
+{
+  "name": "post-facebook",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Facebook — profile/page and Group posts",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "publish:agent-browser",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/facebook.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "facebook",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/facebook.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

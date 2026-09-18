@@ -1,92 +1,39 @@
 # Contributing
 
-Want to add a new platform? Follow this guide.
+## Ground rules
 
-## Adding a New Platform Skill
+- `platforms/*.json` is the only source of platform numbers — never restate limits in code, skills, or docs.
+- Nothing publishes without `approved` status; no bypass paths.
+- No spam machinery — see `docs/SAFETY.md` for the full boundary before proposing features.
+- Canonical skills live in `skills/`; never edit `.agents/` (generated).
+- Tests must never contact a platform or the network — use `fetchImpl` injection and `_setAdapterForTest`.
 
-### 1. Create the skill directory
+## Add a platform
+
+1. **`platforms/<id>.json`** — copy an existing file; fill `constraints`, `thread`, `media`, `links`, `hashtags`, `capabilities`, `publishing`, `automation.selectors`, `rateLimit`, `culture`, `verification{lastReviewed, confidence, sources}`.
+2. **Adapter** — if the platform has an official API you want to support, add `src/adapters/platforms/<id>.js` using `makeAdapter({id, overrides: {publishApi}})` and register it in `src/adapters/registry.js` `OVERRIDES`. Otherwise the generic adapter covers it (manual/agent-browser from metadata).
+3. **Content builder** — add `build<Platform>` in `src/core/adapt.js` and map it in `BUILDERS`. Shape content natively, don't truncate a generic post.
+4. **Skill** — `skills/post-<id>/SKILL.md` + `skill.json` (copy an existing pair; reference `platforms/<id>.json`, don't inline numbers).
+5. **Fixtures** — if it has an agent-browser mode, add sanitized DOM fixtures under `test/fixtures/browser/` (ok / changed-UI / ambiguous / challenge).
+6. **Tests** — adapter contract coverage is automatic via `test/skills.test.js`; add platform-specific validation/adaptation tests.
+7. **Docs** — `CATALOG.md`, `docs/PLATFORM_COMPARISON.md`, README capability table.
+
+## Update platform facts
+
+See `docs/MAINTENANCE.md`. Always update `verification.lastReviewed` and set honest `confidence`.
+
+## Dev loop
 
 ```bash
-mkdir -p .agents/skills/post-{platform}/
+npm test                    # node --test test/*.test.js — 83 tests, no network
+npm run doctor              # env + metadata + store + drift checks
+node bin/cli.js campaign create --source test/fixtures/sources/oss-readme.md --preset oss-launch
 ```
 
-### 2. Create SKILL.md using this template
+Work happens in plain Node ≥18, zero runtime dependencies, ESM. Windows-first — no WSL assumptions, no shell-isms in npm scripts.
 
-```markdown
----
-description: Post to {Platform} for {audience/purpose}
----
-# {Platform} Posting Skill
+## Commits & releases
 
-## Platform Overview
-{What it is, who uses it, why post here}
-
-## Platform Constraints
-- **Character Limit**: {number}
-- **Media**: {supported formats, limits}
-- **Links**: {how links are handled}
-- **Tags/Hashtags**: {rules}
-
-## Posting Method
-{Choose one: Browser Automation OR Manual Paste OR API}
-
-### Browser Automation Steps
-1. Navigate to `{URL}`
-2. Wait for page load
-3. {Specific steps}
-4. Click Post
-5. Verify
-
-### Manual Paste (if auto not possible)
-1. Save content to `posts/drafts/{platform}_post.md`
-2. Inform user to paste manually
-
-## Content Format
-{Template with placeholders}
-
-## Content Strategy
-{What works on this platform}
-
-## Algorithm / Discovery Tips
-{How content gets distributed}
-
-## Best Practices
-{Do's}
-
-## What to Avoid
-{Don'ts}
-
-## Known Pitfalls
-{Technical issues}
-
-## Related Skills
-- `content-writing` — Content adaptation
-- `image-generation` — Platform image specs
-```
-
-### 3. Update the workflow
-
-Add your platform to `.agents/workflows/post-social.md` under Step 3.
-
-### 4. Update CATALOG.md
-
-Add your platform to the skills table.
-
-### 5. Update README.md
-
-Add your platform to the Supported Platforms table.
-
-## Pull Request Checklist
-
-- [ ] SKILL.md has valid YAML frontmatter
-- [ ] All template sections are filled in (no placeholders)
-- [ ] Character limits and constraints are accurate
-- [ ] At least 2 content templates included
-- [ ] Posting method is clearly documented
-- [ ] Workflow updated
-- [ ] CATALOG.md updated
-- [ ] README.md updated
-
-## Code of Conduct
-
-Be respectful, constructive, and helpful. We're building tools for the community.
+- Conventional-ish messages; explain *why*, not just *what*.
+- Never commit `.social-campaigns/`, `posts/`, `.env*`, keys, cookies, or browser state — `doctor` checks the ignore rules.
+- Release process: `docs/deployment-guide.md`.

@@ -1,0 +1,33 @@
+{
+  "name": "post-reddit",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Reddit — community-native self-posts",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "publish:agent-browser",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/reddit.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "reddit",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/reddit.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

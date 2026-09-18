@@ -1,0 +1,61 @@
+{
+  "id": "x",
+  "displayName": "X (Twitter)",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://developer.x.com/en/docs/x-api"],
+    "notes": "Char limits and media counts documented. Link-in-reply reach claim is community-heuristic, not confirmed by X."
+  },
+  "constraints": {
+    "post": { "maxChars": { "value": 280, "confidence": "documented", "note": "free tier" } },
+    "postPremium": { "maxChars": { "value": 25000, "confidence": "documented" } }
+  },
+  "thread": { "supported": true, "style": "composer-chain", "recommendedMax": 10 },
+  "media": {
+    "supported": true, "maxImages": 4, "maxImageMB": 5,
+    "imageSize": [1200, 675], "altText": true,
+    "formats": ["png", "jpg", "gif", "webp"]
+  },
+  "links": {
+    "policy": "reply-preferred", "confidence": "community-heuristic",
+    "notes": "t.co wrapping counts toward the limit. Placing links in a self-reply is a common strategy; the reach penalty is a heuristic, not a documented rule."
+  },
+  "hashtags": { "supported": true, "maxRecommended": 2 },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser", "api"],
+    "observe": ["manual-import"], "thread": true, "media": true
+  },
+  "publishing": {
+    "defaultMode": "agent-browser",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET"],
+      "docs": "https://developer.x.com/en/docs/x-api",
+      "notes": "Official API is paid-tier; adapter interface reserved."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://x.com/home",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "composer": ["[data-testid='tweetTextarea_0']", "div[role='textbox'][data-testid^='tweetTextarea']"],
+      "postButton": ["[data-testid='tweetButtonInline']", "[data-testid='tweetButton']"],
+      "addToThread": ["[data-testid='addButton']"],
+      "challenge": ["text=Verify you are human", "text=unusual activity"]
+    }
+  },
+  "rateLimit": {
+    "postsPerDay": 2400, "per30Min": 50, "confidence": "documented",
+    "notes": "Hard platform caps. Campaign tooling should stay far below them."
+  },
+  "culture": {
+    "audience": "Tech, media, real-time commentary",
+    "tone": "concise, direct, conversational",
+    "works": ["one sharp claim per post", "threads that teach step-by-step", "build-in-public numbers"],
+    "avoid": ["marketing voice", "hashtag stuffing", "engagement bait", "cross-posted identical text"]
+  }
+}

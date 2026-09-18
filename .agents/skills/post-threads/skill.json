@@ -1,0 +1,34 @@
+{
+  "name": "post-threads",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Threads — posts and composer-chain threads",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:agent-browser",
+    "publish:manual",
+    "thread",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/threads.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "threads",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/threads.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

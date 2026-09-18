@@ -1,0 +1,59 @@
+{
+  "id": "hackernews",
+  "displayName": "Hacker News",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "high",
+    "sources": ["https://news.ycombinator.com/newsguidelines.html", "https://news.ycombinator.com/showhn.html"],
+    "notes": "Show HN rules documented: must be something people can try, not a landing page. ~80-char title guidance is heuristic (truncation), not a published limit."
+  },
+  "constraints": {
+    "title": { "maxChars": { "value": 80, "confidence": "community-heuristic", "note": "longer titles truncate in lists" }, "required": true },
+    "body": { "maxChars": null, "notes": "URL or text — not both as a link post" }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": { "supported": false, "altText": false, "formats": [] },
+  "links": {
+    "policy": "url-field", "confidence": "documented",
+    "notes": "Submission is a URL or a text post. Show HN should link to something usable; a text body can complement for context."
+  },
+  "hashtags": { "supported": false, "maxRecommended": 0 },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser"],
+    "observe": ["manual-import"], "thread": false, "media": false
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "api": { "available": false, "implemented": false, "notes": "No official write API." },
+    "postingRules": [
+      "Show HN requires something users can actually try (product, repo, demo) — not waitlists or landing pages",
+      "Do not ask for upvotes; do not use voting rings",
+      "Resubmitting is allowed only after significant time and with genuine changes",
+      "One Show HN per project launch; follow-ups only for major milestones"
+    ]
+  },
+  "automation": {
+    "entryUrl": "https://news.ycombinator.com/submit",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "titleInput": ["input[name='title']"],
+      "urlInput": ["input[name='url']"],
+      "textInput": ["textarea[name='text']"],
+      "submitButton": ["input[type='submit']"],
+      "challenge": ["text=Verify you are human"]
+    }
+  },
+  "rateLimit": {
+    "confidence": "documented",
+    "notes": "Aggressive submission filters exist; accounts flagged for spam get submissions killed silently."
+  },
+  "culture": {
+    "audience": "Senior developers, founders, researchers",
+    "tone": "plain, factual, technical",
+    "works": ["'Show HN: X – what it does' titles", "technical depth", "honest limitations", "benchmarks with methods"],
+    "avoid": ["marketing language", "superlatives", "emojis", "clickbait", "growth-hacking vibes"]
+  }
+}

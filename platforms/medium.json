@@ -1,0 +1,43 @@
+{
+  "id": "medium",
+  "displayName": "Medium",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "medium",
+    "sources": ["https://help.medium.com/"],
+    "notes": "Legacy API is deprecated for new integrations. Publications have their own submission rules. Note: medium.com is unreachable from some networks/regions — generation and drafts must work without access."
+  },
+  "constraints": {
+    "title": { "required": true },
+    "body": { "maxChars": null },
+    "tags": { "max": { "value": 5, "confidence": "documented" } }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "maxImageMB": 10,
+    "imageSize": [1400, 788], "altText": true,
+    "formats": ["png", "jpg", "gif"]
+  },
+  "links": { "policy": "inline", "confidence": "documented", "notes": "Canonical URL supported for syndicated posts" },
+  "hashtags": { "supported": true, "maxRecommended": 5, "notes": "Tags aid Medium-internal discovery" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "api": { "available": false, "implemented": false, "notes": "Deprecated for new integrations." },
+    "notes": "Draft export is the supported path. Reachability varies by region — never block campaign generation on medium.com access."
+  },
+  "automation": null,
+  "rateLimit": { "confidence": "unknown" },
+  "culture": {
+    "audience": "General readers, professionals, SEO-driven discovery",
+    "tone": "polished, essayistic, structured",
+    "works": ["H2-structured longform", "personal narrative + takeaway", "canonical-linked syndication"],
+    "avoid": ["thin content", "keyword stuffing", "listicle spam"]
+  }
+}
