@@ -33,7 +33,15 @@ The publish workflow uses `id-token: write` + `npm publish --provenance`. That r
 - The package on npmjs.com configured for trusted publishing with this repo+workflow (Settings → Publishing access → GitHub Actions), or
 - A granular `NPM_TOKEN` secret as fallback — if `secrets.NPM_TOKEN` exists the workflow uses `NODE_AUTH_TOKEN`; otherwise rely on OIDC alone. **Do not commit tokens.**
 
-If the workflow file still carries `NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}` alongside OIDC, that's fine — npm uses whichever credential is present — but prefer removing the token secret once trusted publishing is configured.
+### Lessons from the v3.0.0 publish (2026-09-19)
+
+The release initially failed three times; the workflow now handles all three root causes:
+
+1. **`actions/setup-node` dummy token** — with `registry-url` and no `NODE_AUTH_TOKEN`, setup-node@v4 exports a placeholder token (`XXXXX-...`) that lands in `.npmrc` as `_authToken`. npm treats auth as configured, skips OIDC, and the registry returns **E404** (setup-node#1551). Fix: the workflow strips the `_authToken` line when the token is empty.
+2. **Invalid `NPM_TOKEN`** — the stored secret also fails E404 (expired/revoked/insufficient scope). Trusted publishing on npmjs.com is configured and is now the primary auth; rotate the token only as a documented fallback.
+3. **npm too old for OIDC** — Node 20 ships npm 10.x which cannot do the OIDC exchange (ENEEDAUTH). Workflow runs Node 24 + `npm install -g npm@latest` (trusted publishing needs npm ≥ 11.5.1).
+
+Result: `social-posting-skills@3.0.0` published 2026-09-19 via OIDC + signed provenance (sigstore log index 2890607047), run [#35418975095](https://github.com/tang-vu/social-posting-skills/actions/runs/35418975095).
 
 ## GitHub Action (draft generation, not auto-posting)
 
