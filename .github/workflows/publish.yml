@@ -21,11 +21,15 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Upgrade npm (trusted publishing needs >= 11.5.1)
+        run: npm install -g npm@latest
+
       - name: Publish to npm
         env:
-          # NPM_TOKEN secret expired/insufficient (E404 on PUT with real token).
-          # Empty string clears setup-node's dummy placeholder AND skips token
-          # auth entirely, forcing npm's OIDC trusted-publisher exchange.
+          # NPM_TOKEN secret is invalid (E404 on PUT). Empty string clears
+          # setup-node's dummy placeholder AND skips token auth entirely,
+          # forcing npm's OIDC trusted-publisher exchange. Requires a
+          # "GitHub Actions" trusted publisher configured on npmjs.com.
           # Fallback: rotate NPM_TOKEN on npmjs.com and set this env back to
           # ${{ secrets.NPM_TOKEN }}.
           NODE_AUTH_TOKEN: ""
