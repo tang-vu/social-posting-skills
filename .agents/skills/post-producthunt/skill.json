@@ -1,0 +1,32 @@
+{
+  "name": "post-producthunt",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Product Hunt — launch kits for manual launch",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/producthunt.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "producthunt",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/producthunt.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

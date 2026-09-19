@@ -1,0 +1,26 @@
+{
+  "name": "content-writing",
+  "version": "3.0.0",
+  "description": "Turn the campaign content graph into genuinely platform-native drafts",
+  "capabilities": [
+    "generate",
+    "adapt",
+    "content-graph"
+  ],
+  "inputs": [
+    "content graph",
+    "campaign intent"
+  ],
+  "outputs": [
+    "platform-native drafts",
+    "media manifest entries"
+  ],
+  "platform": null,
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "skills/social-campaign/SKILL.md",
+    "platforms/"
+  ]
+}

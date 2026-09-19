@@ -6,8 +6,24 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Campaign data — local-first state; NEVER commit drafts/receipts/media
+.social-campaigns/
+playbooks/
+
 # Posts (user-generated drafts, not part of the package)
 posts/
+
+# Secrets — never commit credentials, tokens, cookies, browser state
+.env
+.env.*
+*.pem
+*.p12
+id_rsa*
+*credentials*.json
+*token*.json
+cookies*.txt
+chrome-profile/
+.browser-state/
 
 # API & DOM reference docs (local tool dev reference, not part of package)
 DOM_SELECTORS.md
@@ -16,3 +32,4 @@ INTERNAL_API_REFERENCE.md
 
 # Node
 node_modules/
+*.tgz

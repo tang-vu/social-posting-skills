@@ -1,0 +1,13 @@
+{
+  "name": "x-challenge",
+  "description": "Sanitized X state behind a security challenge — playbook must abort, never bypass",
+  "dom": {
+    "tag": "body",
+    "children": [
+      { "tag": "main", "children": [
+        { "tag": "div", "attrs": { "id": "challenge" }, "text": "Verify you are human" },
+        { "tag": "iframe", "attrs": { "title": "Verification challenge" } }
+      ]}
+    ]
+  }
+}

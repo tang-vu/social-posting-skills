@@ -1,0 +1,21 @@
+{
+  "name": "x-composer-ok",
+  "description": "Sanitized X home state: unique composer, unique Post button, no challenge",
+  "dom": {
+    "tag": "body",
+    "children": [
+      { "tag": "main", "children": [
+        { "tag": "div", "attrs": { "data-testid": "primaryColumn" }, "children": [
+          { "tag": "div", "attrs": { "data-testid": "tweetTextarea_0", "role": "textbox" }, "text": "" },
+          { "tag": "div", "children": [
+            { "tag": "button", "attrs": { "data-testid": "addButton" }, "text": "+" },
+            { "tag": "button", "attrs": { "data-testid": "tweetButtonInline" }, "text": "Post" }
+          ]}
+        ]}
+      ]},
+      { "tag": "nav", "children": [
+        { "tag": "a", "attrs": { "href": "/home" }, "text": "Home" }
+      ]}
+    ]
+  }
+}

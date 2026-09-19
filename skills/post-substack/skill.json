@@ -1,0 +1,33 @@
+{
+  "name": "post-substack",
+  "version": "3.0.0",
+  "description": "Adapt and publish campaign items on Substack — newsletter issues",
+  "capabilities": [
+    "generate",
+    "validate",
+    "preview",
+    "draft",
+    "publish:manual",
+    "publish:agent-browser",
+    "media",
+    "observe:manual-import"
+  ],
+  "inputs": [
+    "campaign item",
+    "content graph",
+    "platforms/substack.json"
+  ],
+  "outputs": [
+    "platform-native draft",
+    "draft package",
+    "receipt"
+  ],
+  "platform": "substack",
+  "permissions": [
+    "filesystem:drafts"
+  ],
+  "references": [
+    "platforms/substack.json",
+    "skills/social-campaign/SKILL.md"
+  ]
+}

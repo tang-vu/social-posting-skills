@@ -1,0 +1,61 @@
+# Example: generate campaign DRAFTS on release — never auto-post.
+#
+# Drop into your project's .github/workflows/. On each GitHub release it
+# builds draft packages for the oss-launch platforms and uploads them as
+# workflow artifacts for human review. Publishing stays manual — that's
+# the point: automation prepares, humans approve.
+
+name: Social campaign drafts
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Create a campaign from the release notes + README.
+      # The release body is the source; --preset picks the platform set.
+      - name: Create campaign
+        run: |
+          gh release view "${{ github.event.release.tag_name }}" \
+            --json body -q .body > /tmp/release-notes.md || true
+          npx -y social-posting-skills campaign create \
+            --source /tmp/release-notes.md \
+            --preset oss-launch \
+            --title "${{ github.event.repository.name }} ${{ github.event.release.tag_name }}" \
+            --link "${{ github.event.release.html_url }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Preview prints the approval package to the log for review.
+      - name: Preview
+        run: |
+          ID=$(npx -y social-posting-skills campaign list | tail -1 | awk '{print $1}')
+          npx -y social-posting-skills campaign preview "$ID"
+
+      # Export draft packages — the reviewer downloads these and posts.
+      - name: Export drafts
+        run: |
+          ID=$(npx -y social-posting-skills campaign list | tail -1 | awk '{print $1}')
+          npx -y social-posting-skills campaign export "$ID"
+
+      - name: Upload draft packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-campaign-drafts
+          path: .social-campaigns/
+          retention-days: 30
+
+      # Deliberately absent: any publish step. Approve + publish by hand,
+      # or pull the campaign locally and run `campaign approve/publish`.

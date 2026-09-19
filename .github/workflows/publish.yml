@@ -21,6 +21,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Publish to npm (Trusted Publisher / OIDC)
+        # No NODE_AUTH_TOKEN: npm CLI uses the OIDC id-token for trusted
+        # publishing. Setting a token env would override OIDC — keep it off.
+        # Requires "GitHub Actions" trusted publisher configured on npmjs.com.
         run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

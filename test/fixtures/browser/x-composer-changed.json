@@ -1,0 +1,17 @@
+{
+  "name": "x-composer-changed",
+  "description": "Sanitized X state after a UI change: composer testid renamed, selectors must miss (not guess)",
+  "dom": {
+    "tag": "body",
+    "children": [
+      { "tag": "main", "children": [
+        { "tag": "div", "attrs": { "data-testid": "primaryColumn" }, "children": [
+          { "tag": "div", "attrs": { "data-testid": "composer_textarea_v2", "role": "textbox" }, "text": "" },
+          { "tag": "div", "children": [
+            { "tag": "button", "attrs": { "data-testid": "submitPost" }, "text": "Post" }
+          ]}
+        ]}
+      ]}
+    ]
+  }
+}

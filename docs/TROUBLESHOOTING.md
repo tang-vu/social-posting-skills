@@ -1,87 +1,53 @@
 # Troubleshooting
 
-Common issues when using social posting skills with AI agents.
+## Publish states
 
-## Bot Detection / Cloudflare Blocking
+| Symptom | Meaning | Fix |
+|---|---|---|
+| `→ blocked (item status is "draft", needs "approved")` | Not approved yet | `campaign approve <id> --items <p>` then publish |
+| `→ blocked (item status is "exported", …)` | Already exported a draft | Re-approve deliberately, or `campaign set` the content then approve |
+| `→ duplicate-blocked` | Same content+platform was published before (any campaign) | Check `prior.postUrl` in the receipt; `--force` only if intentional |
+| `→ unknown` + reconciliation steps | Side effect ambiguous — post may or may not exist | Check the profile manually, then `campaign reconcile <id> --item <p> --published --url <u>` or `--not-published` |
+| `→ partial` | Some thread posts landed | Receipt has `publishedCount`; continue from the last confirmed post — do not republish the whole thread |
+| `→ fallback-draft` | `--mode api` requested but no API adapter/creds | Use the draft package, or set the env vars and retry |
+| `Nothing to publish — no matching approved items` | Bare `publish` only touches approved items | Approve first or pass `--item`/`--items` |
 
-**Symptom**: Page shows "Verifying you are human" or spins forever.
+## Validation
 
-**Affected platforms**: Product Hunt, IndieHackers, sometimes Medium.
+| Warning/error | Cause | Fix |
+|---|---|---|
+| `<p>: body is N chars, limit is M` | Over platform limit | Shorten, or move the link to first comment/reply |
+| `disclosures declared (…) but not visible in content` | Intent declares disclosures the item doesn't show | Add the disclosure line, or remove the declaration |
+| `numbers not found in source/factBase` | Adapted text cites a number the source doesn't contain | Fix the claim or add it to `--facts` |
+| `reddit: no subreddit target set` | Reddit needs a target | `campaign set <id> --item reddit --field target.subreddit --value r/name` |
+| `engagement-bait phrasing detected` | "Please upvote/like/share" style text | Rewrite — this is a hard error on every platform |
+| `identical to <other> item — cross-posted identical text` | Two items have the same body | Differentiate or drop one; identical cross-posts are flagged by design |
 
-**Cause**: Playwright/Chromium browser is detected as a bot. It lacks anti-detect features (WebGL extensions, navigator.webdriver flag, etc.).
+## Browser playbooks
 
-**Workaround**: These platforms use Manual Paste mode. The agent generates the content and saves it to `posts/drafts/{platform}_post.md`. You copy-paste it into your real browser.
+| Symptom | Meaning | Fix |
+|---|---|---|
+| Selector resolves `missing` | Platform UI changed (or wrong page state) | Add the new selector to `platforms/<p>.json` candidates; update the fixture; re-run |
+| Selector resolves `ambiguous` | Multiple elements match — playbook aborts by design | Tighten the selector (add `data-testid`/`role`/text qualifiers) |
+| `challenge-detected` | CAPTCHA/login wall | Solve it yourself in your own browser, then continue — the tool will not bypass |
+| `login-expired` | Session cookie dead | Re-login in your own browser profile, re-run the playbook |
+| `awaiting-agent` receipt, nothing after | Playbook was written but the run wasn't completed/reported | Run it or `campaign record <id> --item <p> --failed` to close the loop |
 
----
+## Installer / skills
 
-## Vietnamese Text / Unicode Characters
+| Symptom | Fix |
+|---|---|
+| `doctor` reports install drift | Re-run `npx social-posting-skills install` — bundled skills changed since your install |
+| Agent doesn't see the skill | Confirm the install target matches your client's skills dir; `doctor` shows the manifest location |
+| Old `.agents/skills` content lingering | Delete `.agents/skills` and reinstall — `.agents/` is generated, never edited by hand |
 
-**Symptom**: Playwright types garbled characters or skips diacritics.
+## Secrets / env
 
-**Affected platforms**: All (when using browser automation).
+| Symptom | Fix |
+|---|---|
+| API mode fails with missing env | Set `BSKY_HANDLE`/`BSKY_APP_PASSWORD` or `DEVTO_API_KEY`; `doctor` lists what's missing |
+| Asset rejected as sensitive-looking | Rename the file — `assertAssetNameSafe` blocks keys/certs/cookies/tokens/`.env` patterns |
 
-**Cause**: Playwright's `type()` method cannot reliably input Unicode diacritics, CJK characters, or emoji.
+## Still stuck
 
-**Workaround**: All automated posts must be in **ASCII English only**. For Vietnamese content, use Manual Paste mode.
-
----
-
-## LinkedIn System Policy Block
-
-**Symptom**: Browser agent cannot navigate to linkedin.com.
-
-**Cause**: System-level policy blocks browser automation tools from accessing LinkedIn.
-
-**Workaround**: LinkedIn always uses Manual Paste mode. Content is saved to `posts/drafts/linkedin_post.md`.
-
----
-
-## Medium Blocked in Vietnam
-
-**Symptom**: medium.com doesn't load or times out.
-
-**Cause**: Medium is blocked by ISPs in Vietnam.
-
-**Workaround**:
-1. Enable VPN before posting
-2. Or use Manual Paste mode (agent saves draft, you paste when VPN is on)
-
----
-
-## Session Expiry
-
-**Symptom**: Platform shows login page instead of home feed.
-
-**Cause**: Browser cookies/sessions have expired.
-
-**Fix**: Open the platform in the agent's browser, log in manually, then retry.
-
----
-
-## Emoji in Posts
-
-**Symptom**: Emoji characters are skipped or cause errors.
-
-**Cause**: Playwright's keyboard input doesn't support emoji encoding.
-
-**Workaround**: The content-writing skill strips emoji from auto-posted content. For manual platforms, emoji are included in the draft.
-
----
-
-## Image Upload Failures
-
-**Symptom**: Image doesn't attach to the post.
-
-**Cause**: Browser file picker dialogs are difficult for automation tools to interact with.
-
-**Workaround**: Most platforms that support images have the agent create text-only posts. Images can be added manually if needed.
-
----
-
-## Rate Limiting
-
-**Symptom**: Platform shows error or blocks posting.
-
-**Cause**: Posting too frequently or too many platforms in rapid succession.
-
-**Fix**: Add delays between platform posts. The workflow handles this automatically via sequential posting.
+`npx social-posting-skills doctor` covers environment, platform metadata, adapters, store writability, optional creds, gitignore safety, and install drift — run it first and paste the output into an issue.

@@ -1,0 +1,63 @@
+{
+  "id": "reddit",
+  "displayName": "Reddit",
+  "version": "2026-09-18",
+  "status": "active",
+  "verification": {
+    "lastReviewed": "2026-09-18",
+    "confidence": "high",
+    "sources": ["https://support.reddithelp.com/hc/en-us/articles/360043499552"],
+    "notes": "Title/body limits documented. Karma requirements are enforced per-subreddit and by platform spam filters — exact thresholds vary and are not published."
+  },
+  "constraints": {
+    "title": { "maxChars": { "value": 300, "confidence": "documented" }, "required": true },
+    "body": { "maxChars": { "value": 40000, "confidence": "documented" } }
+  },
+  "thread": { "supported": false, "style": "none" },
+  "media": {
+    "supported": true, "maxImages": 20, "maxImageMB": 20,
+    "imageSize": [1200, 628], "altText": true,
+    "formats": ["png", "jpg", "gif"]
+  },
+  "links": {
+    "policy": "inline", "confidence": "documented",
+    "notes": "Both link-posts and inline links supported. Community heuristic: self-posts with the link in a first comment survive spam filters better for newer accounts — per-subreddit rules always win."
+  },
+  "hashtags": { "supported": false, "maxRecommended": 0, "notes": "Flair replaces hashtags; required in many subreddits" },
+  "capabilities": {
+    "generate": true, "validate": true, "preview": true, "draft": true,
+    "publish": ["manual", "agent-browser"],
+    "observe": ["manual-import"], "thread": false, "media": true
+  },
+  "publishing": {
+    "defaultMode": "manual",
+    "perCommunityRules": "Subreddit rules are part of the constraint set. The adapter accepts a 'subreddit' target and requires the agent/user to have read that subreddit's rules before publish.",
+    "api": {
+      "available": true, "implemented": false,
+      "env": ["REDDIT_CLIENT_ID", "REDDIT_CLIENT_SECRET", "REDDIT_REFRESH_TOKEN"],
+      "docs": "https://www.reddit.com/dev/api/",
+      "notes": "Official API exists; posting requires OAuth and still honors subreddit rules + rate limits."
+    }
+  },
+  "automation": {
+    "entryUrl": "https://www.reddit.com/r/{subreddit}/submit",
+    "boundedWaitMs": 8000,
+    "selectors": {
+      "titleInput": ["textarea[name='title']", "[data-testid='post-title']", "input[placeholder*='title' i]"],
+      "bodyInput": ["div[role='textbox']", "textarea[name='text']"],
+      "postButton": ["button:has-text('Post')", "[data-testid='submit-button']"],
+      "flairButton": ["button:has-text('Add flair')", "[data-testid='flair-button']"],
+      "challenge": ["text=Verify you are human"]
+    }
+  },
+  "rateLimit": {
+    "confidence": "documented",
+    "notes": "Reddit rate-limits post frequency per account; new/low-karma accounts are more restricted. Subreddit spam filters auto-remove posts from accounts lacking karma/age — this is platform behavior, not a mod decision."
+  },
+  "culture": {
+    "audience": "Topic communities (subreddits); technical and niche interests",
+    "tone": "authentic, specific, no marketing voice",
+    "works": ["transparent 'I built this because' stories", "real numbers", "asking for feedback", "comment participation before self-posts"],
+    "avoid": ["drive-by promotion", "identical posts across many subs", "asking for upvotes", "marketing buzzwords", "ignoring subreddit rules"]
+  }
+}

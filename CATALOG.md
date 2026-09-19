@@ -1,31 +1,58 @@
-# 📚 Skill Catalog
+# Skill Catalog
 
-## Core Skills
+Canonical sources live in `skills/`; `.agents/skills/` holds identical generated copies.
 
-| Skill | Path | Description |
-|-------|------|-------------|
-| `content-writing` | `.agents/skills/content-writing/SKILL.md` | Adapt one topic into platform-optimized posts with hooks, templates, and SEO |
-| `image-generation` | `.agents/skills/image-generation/SKILL.md` | Generate images sized for each platform with prompt engineering guides |
+## Orchestrator
 
-## Platform Skills
+| Skill | Path | Purpose |
+|---|---|---|
+| `social-campaign` | `skills/social-campaign/` | The pipeline: source → campaign → graph → platform adaptations → preview → approval → publish/export → observe → learnings |
 
-| # | Skill | Path | Platform | Content Type |
-|---|-------|------|----------|-------------|
-| 1 | `post-reddit` | `.agents/skills/post-reddit/SKILL.md` | Reddit | Text/link posts to subreddits |
-| 2 | `post-linkedin` | `.agents/skills/post-linkedin/SKILL.md` | LinkedIn | Thought leadership, professional updates |
-| 3 | `post-facebook` | `.agents/skills/post-facebook/SKILL.md` | Facebook | Community posts, group posts |
-| 4 | `post-threads` | `.agents/skills/post-threads/SKILL.md` | Threads | Short-form micro-blog |
-| 5 | `post-x` | `.agents/skills/post-x/SKILL.md` | X (Twitter) | Tweets, threads |
-| 6 | `post-producthunt` | `.agents/skills/post-producthunt/SKILL.md` | Product Hunt | Product launches, discussions |
-| 7 | `post-hackernews` | `.agents/skills/post-hackernews/SKILL.md` | Hacker News | Show HN submissions |
-| 8 | `post-devto` | `.agents/skills/post-devto/SKILL.md` | Dev.to | Developer articles with SEO |
-| 9 | `post-indiehackers` | `.agents/skills/post-indiehackers/SKILL.md` | IndieHackers | Build-in-public, milestones |
-| 10 | `post-bluesky` | `.agents/skills/post-bluesky/SKILL.md` | Bluesky | Micro-blog (AT Protocol) |
-| 11 | `post-substack` | `.agents/skills/post-substack/SKILL.md` | Substack | Newsletters, long-form |
-| 12 | `post-medium` | `.agents/skills/post-medium/SKILL.md` | Medium | Articles, SEO blogging |
+## Shared
 
-## Workflows
+| Skill | Purpose |
+|---|---|
+| `content-writing` | Voice, hooks, structure — graph-aware adaptation guidance |
+| `image-generation` | Media manifest discipline: dimensions, alt text, provenance |
 
-| Workflow | Path | Description |
-|----------|------|-------------|
-| `post-social` | `.agents/workflows/post-social.md` | End-to-end posting workflow across all platforms |
+## Platform skills (`post-*`)
+
+Each references `platforms/<id>.json` for limits/rules instead of restating them.
+
+| Skill | Platform | Modes | Thread |
+|---|---|---|---|
+| `post-x` | X | manual, agent-browser | ✓ |
+| `post-bluesky` | Bluesky | manual, agent-browser, api | ✓ chain |
+| `post-threads` | Threads | manual, agent-browser | ✓ chain |
+| `post-linkedin` | LinkedIn | manual | — |
+| `post-reddit` | Reddit | manual, agent-browser | — |
+| `post-hackernews` | Hacker News | manual, agent-browser | — |
+| `post-devto` | Dev.to | manual, agent-browser, api | — |
+| `post-producthunt` | Product Hunt | manual | — |
+| `post-substack` | Substack | manual, agent-browser | — |
+| `post-medium` | Medium | manual | — |
+| `post-facebook` | Facebook | manual, agent-browser | — |
+| `post-indiehackers` | IndieHackers | manual | — |
+
+## Workflow
+
+| File | Purpose |
+|---|---|
+| `.agents/workflows/post-social.md` | The campaign lifecycle as an agent workflow (filename kept for compatibility) |
+
+## Interfaces
+
+| Interface | Entry | Notes |
+|---|---|---|
+| CLI | `bin/cli.js` (`social-posting-skills` / `sps`) | full campaign lifecycle; bare run = install |
+| MCP | `src/interfaces/mcp.js` | stdio JSON-RPC; approval-gated publish tool; no browser control |
+| Library | `src/core/index.js` | `ingest`, `createCampaign`, `adaptCampaign`, `publishItem`, … |
+| Installer | `bin/install.js` → `src/interfaces/install.js` | bundled copies, 8 targets, drift manifest |
+
+## Platform metadata
+
+`platforms/*.json` × 12 — volatile facts as versioned data (`constraints`, `thread`, `media`, `links`, `hashtags`, `capabilities`, `publishing`, `automation`, `rateLimit`, `culture`, `verification`). Schema notes: `platforms/README.md`.
+
+## Presets
+
+`src/core/presets.js`: `oss-launch` (8 platforms), `release-notes-only` (3), `dev-article` (4).
