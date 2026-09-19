@@ -6,14 +6,14 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Campaign data — local-first state; NEVER commit drafts/receipts/media
+# Campaign data â€” local-first state; NEVER commit drafts/receipts/media
 .social-campaigns/
 playbooks/
 
 # Posts (user-generated drafts, not part of the package)
 posts/
 
-# Secrets — never commit credentials, tokens, cookies, browser state
+# Secrets â€” never commit credentials, tokens, cookies, browser state
 .env
 .env.*
 *.pem
@@ -33,3 +33,9 @@ INTERNAL_API_REFERENCE.md
 # Node
 node_modules/
 *.tgz
+
+# AI assistant artifacts
+.devin/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+NUL
