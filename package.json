@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "test": "node --test \"test/*.test.js\"",
+    "validate": "node scripts/validate-skills.js",
     "install:skills": "node bin/cli.js install --project",
     "doctor": "node bin/cli.js doctor",
     "prepack": "node bin/prepack.js"
@@ -46,6 +47,7 @@
     "type": "git",
     "url": "git+https://github.com/tang-vu/social-posting-skills.git"
   },
+  "bugs": "https://github.com/tang-vu/social-posting-skills/issues",
   "author": "Tang Vu",
   "homepage": "https://github.com/tang-vu/social-posting-skills"
 }

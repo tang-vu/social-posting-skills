@@ -39,7 +39,7 @@ export function parseSourceSpec(spec) {
   if (existsSync(path.resolve(s))) return { type: "file", ref: s };
   // Bare owner/repo or owner/repo@tag shorthand for GitHub releases
   const short = s.match(/^([\w.-]+\/[\w.-]+)(?:@(.+))?$/);
-  if (short && !s.includes(path.sep) && s.split("/").length === 2) {
+  if (short && !s.includes("\\") && s.split("/").length === 2) {
     return { type: "github-release", ref: { repo: short[1], tag: short[2] ?? null } };
   }
   return { type: "text", ref: s }; // last resort: treat as literal text
