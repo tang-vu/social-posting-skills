@@ -15,15 +15,22 @@
 //   · .agents/skills drift vs skills/ (generated copy — reinstall to fix)
 // Canonical skills live in skills/ only; .agents/ is generated output.
 
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, realpathSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const REAL_ROOT = realpathSync(ROOT);
 let failures = 0, warnings = 0;
 const fail = (m) => { console.error(`  ✗ ${m}`); failures++; };
 const warn = (m) => { console.log(`  ! ${m}`); warnings++; };
+
+const nonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+const isWithin = (root, target) => {
+  const relative = path.relative(root, target);
+  return relative !== ".." && !relative.startsWith(`..${path.sep}`) && !path.isAbsolute(relative);
+};
 
 // Frontmatter here is flat `key: value` scalars — a small parser keeps the
 // package dependency-free. Indented lines and `- item` lists are tolerated
@@ -95,19 +102,24 @@ for (const name of skillDirs) {
   } else {
     try {
       manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+      if (manifest === null || typeof manifest !== "object" || Array.isArray(manifest)) {
+        fail(`${rel}/skill.json: manifest must be an object`);
+        manifest = null;
+      }
     } catch (e) {
       fail(`${rel}/skill.json: ${e.message}`);
     }
   }
 
   if (manifest) {
-    for (const k of ["name", "version", "description", "platform"]) {
-      if (!(k in manifest) || (manifest[k] !== null && !manifest[k])) {
-        fail(`${rel}/skill.json: missing ${k}`);
-      }
+    for (const k of ["name", "version", "description"]) {
+      if (!nonEmptyString(manifest[k])) fail(`${rel}/skill.json: ${k} must be a non-empty string`);
+    }
+    if (!("platform" in manifest) || (manifest.platform !== null && !nonEmptyString(manifest.platform))) {
+      fail(`${rel}/skill.json: platform must be null or a non-empty string`);
     }
     for (const k of ["capabilities", "inputs", "outputs", "permissions", "references"]) {
-      if (!Array.isArray(manifest[k]) || manifest[k].some((v) => typeof v !== "string" || !v)) {
+      if (!Array.isArray(manifest[k]) || manifest[k].some((v) => !nonEmptyString(v))) {
         fail(`${rel}/skill.json: ${k} must be an array of non-empty strings`);
       }
     }
@@ -125,10 +137,15 @@ for (const name of skillDirs) {
     if (name.startsWith("post-") && manifest.platform !== name.slice(5)) {
       fail(`${rel}/skill.json: platform "${manifest.platform}" ≠ post- suffix`);
     }
-    for (const ref of manifest.references ?? []) {
-      const target = path.join(ROOT, ref);
-      if (!existsSync(target)) {
+    const references = Array.isArray(manifest.references) ? manifest.references.filter(nonEmptyString) : [];
+    for (const ref of references) {
+      const target = path.resolve(ROOT, ref);
+      if (!isWithin(ROOT, target)) {
+        fail(`${rel}/skill.json: reference "${ref}" must stay inside the repository`);
+      } else if (!existsSync(target)) {
         fail(`${rel}/skill.json: reference "${ref}" does not exist`);
+      } else if (!isWithin(REAL_ROOT, realpathSync(target))) {
+        fail(`${rel}/skill.json: reference "${ref}" must stay inside the repository`);
       } else if (ref.endsWith("/") && !statSync(target).isDirectory()) {
         fail(`${rel}/skill.json: reference "${ref}" is not a directory`);
       }
