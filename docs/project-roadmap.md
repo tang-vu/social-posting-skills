@@ -10,6 +10,10 @@
 - 83-test suite; browser DOM fixtures; SSRF tests; dogfood OSS fixtures
 - Docs: README, SAFETY, MIGRATION, MAINTENANCE, architecture, troubleshooting, PDR
 
+## Delivered since v3.0
+
+- **Machine-readable doctor** — `doctor --json` / `--ci`, versioned check IDs and summary, actionable remediation, secrets-safe output, and failure-only exit codes.
+
 ## Next (3.x)
 
 - **More API adapters** — LinkedIn, Facebook Pages, Threads (Meta API), Product Hunt. Metadata already declares them `implemented: false`; adapters land as credentials/testing allow.
@@ -17,7 +21,6 @@
 - **Variant experiments** — A/B hooks exist (`addItem --variant`, `campaign variants`); add minimum-interval guards per community so variants can't spam a subreddit.
 - **Import more source types** — RSS feed items, YouTube release videos, papers (arXiv abs pages).
 - **Analytics import polish** — CSV import of platform-exported metrics.
-- **`doctor` CI mode** — `--ci` flag for machine-readable output.
 
 ## Later (4.0 candidates)
 

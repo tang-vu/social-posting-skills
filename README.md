@@ -116,8 +116,12 @@ campaign observe <id> --item <i> --url u --views n --likes n …
 campaign learn <id> --text "<lesson>" [--inferred]
 campaign schedule <id> --item <i> --at <iso> --tz <IANA> | --clear
 campaign receipts <id> | campaign variants <id>
-adapters | doctor | calendar | learnings | presets | mcp | init | install
+doctor [--json|--ci]                    # versioned diagnostics; exit 1 on required failures
+adapters | calendar | learnings | presets | mcp | init | install
 ```
+
+`doctor --json` (or `--ci`) emits one secrets-safe JSON report for scripts and agents.
+Optional credentials and warnings remain non-fatal. See [the diagnostic contract](docs/DOCTOR.md).
 
 ## MCP server
 
@@ -172,6 +176,7 @@ docs/                   SAFETY, MIGRATION, MAINTENANCE, architecture, guides
 | [docs/MIGRATION.md](docs/MIGRATION.md) | v2 → v3: what changed, what still works |
 | [docs/MAINTENANCE.md](docs/MAINTENANCE.md) | Keeping platform facts fresh; review cadence |
 | [docs/system-architecture.md](docs/system-architecture.md) | System design: core, adapters, interfaces |
+| [docs/DOCTOR.md](docs/DOCTOR.md) | Machine-readable diagnostic schema, exit codes, and safety boundaries |
 | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Unknown states, selector misses, drift |
 | [docs/PLATFORM_COMPARISON.md](docs/PLATFORM_COMPARISON.md) | Platform orientation (numbers live in `platforms/*.json`) |
 | [docs/project-overview-pdr.md](docs/project-overview-pdr.md) | Product definition + requirements status |

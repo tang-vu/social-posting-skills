@@ -38,7 +38,7 @@
 | Symptom | Fix |
 |---|---|
 | `doctor` reports install drift | Re-run `npx social-posting-skills install` — bundled skills changed since your install |
-| Agent doesn't see the skill | Confirm the install target matches your client's skills dir; `doctor` shows the manifest location |
+| Agent doesn't see the skill | Confirm the install target matches your client's skills dir; `doctor` reports each known target's manifest state |
 | Old `.agents/skills` content lingering | Delete `.agents/skills` and reinstall — `.agents/` is generated, never edited by hand |
 
 ## Secrets / env
@@ -47,6 +47,10 @@
 |---|---|
 | API mode fails with missing env | Set `BSKY_HANDLE`/`BSKY_APP_PASSWORD` or `DEVTO_API_KEY`; `doctor` lists what's missing |
 | Asset rejected as sensitive-looking | Rename the file — `assertAssetNameSafe` blocks keys/certs/cookies/tokens/`.env` patterns |
+
+## Machine-readable diagnostics
+
+Use `social-posting-skills doctor --json` (or `--ci`) for a versioned report with stable check IDs, statuses, and remediation. Exit `1` means at least one required check failed; warnings, optional credentials, and absent installs alone exit `0`. Credential presence does not verify authentication. See [DOCTOR.md](DOCTOR.md) for the complete contract and diagnostic limits.
 
 ## Still stuck
 

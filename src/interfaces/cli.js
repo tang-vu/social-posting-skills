@@ -656,7 +656,7 @@ OTHER
   calendar                     planned/approved/published/failed view
   learnings                    Learning store summary (observed vs inferred)
   mcp                          Start the MCP server (stdio)
-  doctor                       Environment + safety checks
+  doctor [--json|--ci]         Environment + safety checks (JSON report for CI)
   version | help
 `);
 }
